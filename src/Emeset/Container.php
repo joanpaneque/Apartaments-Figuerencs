@@ -7,7 +7,6 @@
  *
  * Classe contenidor,  té la responsabilitat d'instaciar els models i altres objectes.
  **/
-
 namespace Emeset;
 
 /**
@@ -43,5 +42,4 @@ class Container {
     public function apartments() {
         return new \Daw\Apartments($this->sql);
     }
-
 }
