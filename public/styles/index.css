@@ -1,0 +1,20 @@
+nav {
+    background: red;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+}
+
+/* General CSS */
+.body-align {
+    padding: 10px;
+}
+
+.icon {
+    max-height: 25px;
+    max-width: 25px;
+}
