@@ -1,7 +1,7 @@
 .ui-datepicker {
     width: 95%;
     height: auto;
-    max-width: 370px;
+    max-width: 390px;
     text-align: center;
     margin: 5px auto 0;
 
@@ -18,7 +18,7 @@
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     color: #fff;
-
+    padding: 5px;
 }
 
 .ui-datepicker a {
@@ -32,11 +32,11 @@
 .ui-datepicker-header {
     /* background: #eee; */
     height: 40px;
-    /* Center vertical alignment */
     line-height: 40px;
 }
 
 .ui-datepicker-title {
+    text-transform: capitalize;
     text-align: center;
 }
 
@@ -84,8 +84,10 @@
     padding-bottom: 15px;
 }
 
+
+
 td.ui-datepicker-unselectable span.ui-state-default {
-    color: #555;
+    color: #888;
 }
 
 a.ui-state-highlight {
@@ -94,4 +96,19 @@ a.ui-state-highlight {
 
 a.ui-state-default {
     color: #fff;
+}
+
+
+td.ui-datepicker-current-day {
+    background: rgba(34, 116, 165, 1);
+    border-radius: 50px;
+}
+
+.ui-datepicker td:hover:not(.ui-datepicker-unselectable):not(.ui-datepicker-current-day) {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+}
+
+.ui-datepicker td:hover:not(.ui-datepicker-unselectable) {
+    cursor: pointer;
 }
