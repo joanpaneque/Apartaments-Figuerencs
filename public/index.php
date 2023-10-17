@@ -1,6 +1,14 @@
 <?php
 
+// Configuration
+include "../src/config.php";
 
-    include "../src/config.php";
-    
-    $r = $_REQUEST["r"] ?? "";
+// Controllers
+include "../src/controllers/index.php";
+
+// Rutes
+$r = $_REQUEST["r"] ?? "";
+
+if ($r == "") {
+    ctrlIndex();
+}
