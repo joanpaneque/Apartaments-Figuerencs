@@ -16,10 +16,16 @@
 <body>
     <nav class="row body-align">
         <div class="col-5">
-            <input type="text" id="date-entry">
+            <div class="">
+                <span for="date-entry" class="left">Arribada</span>
+                <input type="text" id="date-entry">
+            </div>
         </div>
         <div class="col-5">
-            <input type="text" id="date-exit">
+            <div class="">
+                <span for="date-exit">Sortida</span>
+                <input type="text" id="date-exit">
+            </div>
         </div>
         <!-- Separator of the two columns -->
         <div class="col-2">
