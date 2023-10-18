@@ -1,0 +1,87 @@
+body {
+    overflow-y: hidden;
+    max-height: fit-content;
+}
+
+
+/* ######### BG CONTAINER */
+.background-img {
+    opacity: 0.35;
+    position: fixed;
+    left: -700px;
+    transform: translateX(-50px);
+    height: 100vh;
+}
+
+
+/* ######### MAIN CONTAINER */
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #EBEBEB;
+    height: 426px;
+    width: 277px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px #0000004d;
+}
+
+.login-container h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+
+.user {
+    display: block;
+    height: 22px;
+    margin-left: 20px;
+    margin-top: 4px;
+    float: left;
+}
+
+.name p {
+    font-size: 22px;
+    margin-left: 60px;
+}
+
+.name p:nth-child(2) {
+    margin-bottom: 3px;
+}
+
+
+.reservations p {
+    font-size: 22px;
+    text-decoration: underline;
+    margin-left: 20px;
+    margin-top: 35px;
+}
+
+.reservations a {
+    font-size: 18px;
+    display: list-item;
+    text-decoration: none;
+    color: black;
+    margin-left: 80px;
+    margin-bottom: -10px;
+}
+
+
+
+
+
+/* ########### TABLET */
+@media screen and (min-width: 480px) {
+
+}
+
+
+
+/* ########### PC */
+@media screen and (min-width: 960px) {
+
+}
