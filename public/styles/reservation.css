@@ -9,14 +9,21 @@ body {
 
 
 /* ######### MAIN CONTAINER */
+
+
+.container h1 {
+    padding-top: 65px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .group {
-    border-radius: 15px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    justify-content: center;
-    padding: 25px 0;
-    padding-top: 10px;
+    border-radius: 15px;
     margin: 0 auto;
     border-bottom: 1px solid rgba(0, 0, 0, 0.195);
     margin-bottom: 10px;
@@ -24,24 +31,21 @@ body {
     padding: 10px 20px;
 }
 
-.group:last-child {
-    border: none;
+.img {
+    flex: 1;
 }
 
-.container img {
-    float: left;
+.img img {
     width: 85px;
     height: 85px;
-    margin-left: -50px;
     border-radius: 15px;
 }
 
-.container h1 {
-    padding-top: 80px;
-    margin-bottom: 50px;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: underline;
+.info-container {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .info-container a {
@@ -55,6 +59,16 @@ body {
 .info-container p {
     margin-bottom: -2px;
 }
+
+.right-aligned-content {
+    text-align: right;
+}
+
+.right-aligned-content {
+    color: #898989;
+    width: 60px;
+}
+
 
 
 /* ########### TABLET */

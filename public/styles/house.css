@@ -10,6 +10,7 @@
 
 /* ######### INFO CONTAINER */
 .info,
+.description,
 .offers,
 .map,
 .rules {
@@ -17,9 +18,11 @@
 }
 
 .paragraph,
+.description,
 .offers,
 .rules,
-.fix {
+.fix,
+.map h4 {
     padding: 12px;
 }
 
@@ -38,13 +41,25 @@ h6 {
     font-weight: normal;
 }
 
-.image {
+.image img {
     padding: 0;
+    padding-top: 65px;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
 }
+
 
 .info h1 {
     font-size: 32px;
     margin-top: 15px;
+}
+
+.postal {
+    color: #898989;
+    font-size: 15px;
+    margin-top: -3px;
+    margin-bottom: -8px;
 }
 
 /* ########## MAP CONTAINER */
@@ -72,6 +87,114 @@ h6 {
     float: left;
     margin-top: 8px;
 }
+
+
+
+
+/* ########### Modal Reserva */
+.group {
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.img img {
+    width: 85px;
+    height: 85px;
+    border-radius: 15px;
+    float: left;
+}
+
+.info-container {
+    margin-top: 15px;
+    margin-left: 10px; 
+}
+
+.info-container h1 {
+    font-size: 22px;
+}
+
+.info-container p {
+    margin-bottom: -8px;
+}
+
+.right-aligned-content {
+    text-align: right;
+}
+
+.right-aligned-content {
+    color: #898989;
+    width: 60px;
+}
+
+
+/* ######### DATES AND HOSTS */
+.dates-hosts {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+
+.dates,
+.hosts {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-aligned-content {
+    margin-right: 20px;
+}
+
+.text-container {
+    font-weight: bold;
+}
+
+
+/* ######### PRICE */
+.info-price, 
+.nights,
+.total {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text{
+    font-weight: normal;
+}
+
+.number {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.total {
+    border-top: 1px solid rgb(28, 28, 28);
+}
+
+.total p {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+.container-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-button button {
+    margin-top: 20px;
+    width: 100%;
+    font-size: 20px;
+}
+
+
+
 
 
 

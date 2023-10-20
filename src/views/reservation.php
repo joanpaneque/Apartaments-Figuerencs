@@ -16,44 +16,47 @@
         <?php 
             include("header.php");
         ?>
-
+        
         <div class="container">
             <h1>Reserves</h1>
-
             <h5>2023</h5>
-            <?php 
-                for ($i = 0; $i < 5; $i++) { ?>
+            <?php for ($i = 0; $i < 5; $i++) { ?>
                 <div class="group">
-
                     <div class="img">
-                        <img src="../assets/img/casa.jpg" alt="">
+                        <a href="?r=house">
+                            <img src="../assets/img/exterior.jpg" alt="">
+                        </a>
                     </div>
-
                     <div class="info-container">
-                        <a href="">El Far</a>
-                        <p>Figueres, Catalunya</p>
-                        <p>25-30 Octubre</p>
+                        <div class="text-container">
+                            <a href="?r=house">El Far</a>
+                            <p>Figueres</p>
+                        </div>
+                        <p class="right-aligned-content">
+                            18 Oct
+                            20 Oct
+                        </p>
                     </div>
                 </div>
-
             <?php } ?>
 
             <h5>2022</h5>
-            <?php 
-                for ($i = 0; $i < 5; $i++) { ?>
+            <?php for ($i = 0; $i < 5; $i++) { ?>
                 <div class="group">
-
                     <div class="img">
-                        <img src="../assets/img/casa.jpg" alt="">
+                        <img src="../assets/img/interior.jpg" alt="">
                     </div>
-
                     <div class="info-container">
-                        <a href="">Nom de la casa</a>
-                        <p>Ubicació</p>
-                        <p>25-30 Octubre</p>
+                        <div class="text-container">
+                            <a href="">La Maravella</a>
+                            <p>Figueres</p>
+                        </div>
+                        <p class="right-aligned-content">
+                            18 Oct
+                            20 Oct
+                        </p>
                     </div>
                 </div>
-
             <?php } ?>
 
 
