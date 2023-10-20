@@ -10,27 +10,33 @@
     <link rel="stylesheet" type="text/css" href="styles/index.css">
     <link rel="stylesheet" type="text/css" href="styles/calendar.css">
     <link rel="stylesheet" type="text/css" href="styles/global.css">
+    <link rel="stylesheet" type="text/css" href="styles/FloatingWindow.css">
     <script src="js/index.js" type="module"></script>
     <title>Index</title>
 </head>
 <body>
-    <nav class="row body-align">
-        <div class="col-5">
-            <div class="">
-                <span for="date-entry" class="left">Arribada</span>
-                <input type="text" id="date-entry">
+    <div class="container">
+        <nav class="row">
+            <div class="col-10">
+                <div class="apartment-dates">
+                    <div class="date-container date-entry">
+                        <label for="date-entry" class="left">Arribada</label>
+                        <input placeholder="Introdueix la data d'entrada" type="text" id="date-entry" class="nav-input">
+                    </div>
+                    <div class="date-container date-exit">
+                        <label for="date-exit">Sortida</label>
+                        <input placeholder="Introdueix la data de sortida" type="text" id="date-exit" class="nav-input">
+                    </div>
+                    <div class="date-container people">
+                        <label for="people">Viatjers</label>
+                        <input type="text" id="people" value="0" class="nav-input">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-5">
-            <div class="">
-                <span for="date-exit">Sortida</span>
-                <input type="text" id="date-exit">
+            <div class="col-2">
+                <img class="icon" src="assets/svg/settings-sliders.svg">
             </div>
-        </div>
-        <!-- Separator of the two columns -->
-        <div class="col-2">
-            <img class="icon" src="assets/svg/settings-sliders.svg">
-        </div>
-    </nav>
+        </nav>
+    </div>
 </body>
 </html>

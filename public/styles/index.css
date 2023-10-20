@@ -1,20 +1,143 @@
 nav {
-    background: red;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
-input {
-    width: 100%;
+#ui-datepicker-div {
+    display: none;
 }
+
 
 /* General CSS */
 .body-align {
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .icon {
     max-height: 25px;
     max-width: 25px;
+}
+
+.bg {
+    position: fixed;
+    z-index: -1;
+}
+
+input {
+    display: block;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-left: 3px;
+}
+
+.nav-input {
+    border: none;
+    outline: none;
+    height: 15px;
+    text-align: left;
+    width: 100%;
+}
+
+.apartment-dates {
+    display: flex;
+    --box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.17);
+    box-shadow: var(--box-shadow);
+    -webkit-box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    border-radius: 50px;
+    width: 100%;
+}
+
+.date-container {
+    width: 50%;
+}
+
+.date-container:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+
+.date-container {
+    border: none;
+    padding: 15px 20px;
+}
+
+.date-container:first-child {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    overflow: hidden;
+}
+
+.date-exit:last-child {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+}
+
+.people {
+    width: 25%;
+}
+
+.traveler-type {
+    display: flex;
+    height: 75px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.traveler-selector {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+}
+
+.traveler-selector img {
+    height: 30px;
+    filter: invert(1);
+    opacity: 0.66;
+}
+
+.traveler-description {
+    font-family: Circular Std Book Light;
+    color: #aaa;
+}
+
+.traveler-remove,
+.traveler-add {
+    border: 1px solid #aaa;
+    border-radius: 50%;
+}
+
+.traveler-remove.disabled,
+.traveler-add.disabled {
+    border: 1px solid #444;
+    cursor: not-allowed;
+}
+
+.traveler-remove.disabled img,
+.traveler-add.disabled img {
+    filter: invert(0.5);
+}
+
+.traveler-remove:hover:not(.disabled),
+.traveler-add:hover:not(.disabled) {
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.traveler-remove:hover:not(.disabled) img,
+.traveler-add:hover:not(.disabled) img {
+    filter: invert(1);
+}
+
+.traveler-number {
+    width: 10px;
+    text-align: center;
 }
