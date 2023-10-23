@@ -1,5 +1,7 @@
 <?php
 
-function ctrlJsonApartments() {
-    include "../src/views/json-apartments.php";
+function ctrlJsonApartments($request, $response, $container) {
+    $response->setTemplate("json-apartments.php");
+
+    
 }

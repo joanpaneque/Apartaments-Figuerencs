@@ -1,8 +1,18 @@
 <?php
 
-// Configuration
+    // Configuration
     include "../src/config.php";
 
+    // Emeset library
+    include "../src/Emeset/Container.php";
+    include "../src/Emeset/Request.php";
+    include "../src/Emeset/Response.php";
+
+    $request = new \Emeset\Request();
+    $response = new \Emeset\Response();
+    $container = new \Emeset\Container($config);
+
+    // Controllers
     include "../src/controllers/login.php";
     include "../src/controllers/register.php";
     include "../src/controllers/personal-information.php";
@@ -10,25 +20,25 @@
     include "../src/controllers/index.php";
     include "../src/controllers/json-apartments.php";
     include "../src/controllers/house.php";
-
     
     $r = $_REQUEST["r"] ?? "";
 
-
     if ($r == "") {
-        ctrlIndex();
+        ctrlIndex($request, $response, $container);
     } else if ($r == "json-apartments") {
-        ctrlJsonApartments();
+        ctrlJsonApartments($request, $response, $container);
     } else if ($r === "login") {
-        ctrlLogin();
+        ctrlLogin($request, $response, $container);
     } elseif ($r === "register") {
-        ctrlRegister();
+        ctrlRegister($request, $response, $container);
     } elseif ($r === "information") {
-        ctrlPersonalInformation();
+        ctrlPersonalInformation($request, $response, $container);
     } elseif ($r === "reservation") {
-        ctrlReservation();
+        ctrlReservation($request, $response, $container);
     } elseif ($r === "house") {
-        ctrlHouse();
+        ctrlHouse($request, $response, $container);
     } else {
         echo "404";
     } 
+
+    $response->response();

@@ -1,4 +1,4 @@
 <?php
-    function ctrlHouse () {
-        include "../src/views/house.php";
+    function ctrlHouse($request, $response, $container) {
+        $response->setTemplate("house.php");
     }

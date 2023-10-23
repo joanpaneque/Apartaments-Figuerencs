@@ -1,4 +1,4 @@
 <?php
-    function ctrlReservation () {
+    function ctrlReservation ($request, $response, $container) {
         include "../src/views/reservation.php";
     }
