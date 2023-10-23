@@ -144,7 +144,7 @@
                             <div class="hosts">
                                 <ul>
                                     <div class="text-container">
-                                        <p>Hostes</p>
+                                        <p>Viatjers</p>
                                     </div>
                                 </ul>
                                 <p class="right-aligned-content">
@@ -160,7 +160,7 @@
                             <div class="info-price">
                                 <ul>
                                     <div class="text">
-                                        <p>Preu x nit</p>
+                                        <p>Preu per nit</p>
                                     </div>
                                 </ul>    
                                 <p class="right-aligned-content number">€ 195</p>
