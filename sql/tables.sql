@@ -1,3 +1,6 @@
+CREATE DATABASE apartamentsfiguerencs;
+USE apartamentsfiguerencs;
+
 CREATE TABLE apartments (
     price_off_season DECIMAL(10, 2),
     price_peak_season DECIMAL(10, 2),
@@ -36,7 +39,7 @@ CREATE TABLE bookings (
     apartment_code INT,
     PRIMARY KEY (code),
     FOREIGN KEY (apartment_code) REFERENCES apartments(code)
-)
+);
 
 CREATE TABLE roles (
     name VARCHAR(255),
@@ -68,4 +71,14 @@ CREATE TABLE users (
     role_code INT,
     PRIMARY KEY (code),
     FOREIGN KEY (role_code) REFERENCES roles(code)
+);
+
+CREATE TABLE seasons (
+    type VARCHAR(255),
+    date1 DATE,
+    date2 DATE,
+    code INT AUTO_INCREMENT,
+    apartment_code INT,
+    PRIMARY KEY (code),
+    FOREIGN KEY (apartment_code) REFERENCES apartments(code)
 );
