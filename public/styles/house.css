@@ -1,0 +1,106 @@
+* {
+    outline: red 0px dashed;
+}
+
+
+/* ######### MAIN CONTAINER */
+.container {
+    padding: 0;
+}
+
+/* ######### INFO CONTAINER */
+.info,
+.offers,
+.map,
+.rules {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.paragraph,
+.offers,
+.rules,
+.fix {
+    padding: 12px;
+}
+
+
+h4,
+h6 {
+    margin-top: 20px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.image {
+    padding: 0;
+}
+
+.info h1 {
+    font-size: 32px;
+    margin-top: 15px;
+}
+
+/* ########## MAP CONTAINER */
+.map iframe {
+    width: 100%;
+    height: 280px;
+}
+
+.rules {
+    margin-bottom: 50px;
+}
+
+
+.fix {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(247, 247, 247);
+}
+
+.fix button {
+    float: right;
+}
+
+.fix p {
+    float: left;
+    margin-top: 8px;
+}
+
+
+
+
+
+/* ########### TABLET */
+@media screen and (min-width: 480px) {
+}
+
+/* ########### PC */
+@media screen and (min-width: 960px) {
+    .image,
+    .map iframe {
+        border-radius: 15px;
+    }
+
+    .image {
+        width: 25%;
+        height: 25%;
+    }
+
+    .map iframe {
+        width: 50%;
+    }
+
+
+
+
+    .fix {
+        display: none;
+    }
+}

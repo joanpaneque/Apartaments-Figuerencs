@@ -40,7 +40,7 @@
 
                 </form>
 
-                <a href="">No tens compte?</a>
+                <a href="?r=login">Ja tens compte?</a>
             </div>
         </div>
     </body>

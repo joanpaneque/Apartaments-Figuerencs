@@ -12,6 +12,11 @@
     </head>
 
     <body>
+
+        <?php 
+            include("header.php");
+        ?>
+        
         <div class="main-container">
             <img src="../assets/img/login-bg.jpg" class="background-img">
 
@@ -27,9 +32,8 @@
                 <div class="reservations">
                     <p>Reserves</p>
 
-                    <a href="">Anteriors</a>
-                    <br>
-                    <a href="">Actuals</a>
+                    <a href="?r=reservation">Anteriors</a>
+                    <a href="?r=reservation">Actuals</a>
                 </div>
                 
             </div>

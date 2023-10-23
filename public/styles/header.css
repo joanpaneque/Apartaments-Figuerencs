@@ -1,0 +1,13 @@
+header {
+    height: 65px;
+}
+
+.main-logo {
+    margin-left: 15px;
+    height: 45px;
+}
+
+.user-logo {
+    margin-right: 15px;
+    height: 25px;
+}

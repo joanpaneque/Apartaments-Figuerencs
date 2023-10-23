@@ -9,6 +9,7 @@
     include "../src/controllers/reservation.php";
     include "../src/controllers/index.php";
     include "../src/controllers/json-apartments.php";
+    include "../src/controllers/house.php";
 
     
     $r = $_REQUEST["r"] ?? "";
@@ -26,6 +27,8 @@
         ctrlPersonalInformation();
     } elseif ($r === "reservation") {
         ctrlReservation();
+    } elseif ($r === "house") {
+        ctrlHouse();
     } else {
         echo "404";
-    }
+    } 

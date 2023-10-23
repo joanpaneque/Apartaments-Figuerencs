@@ -28,7 +28,7 @@ body {
     border: none;
 }
 
-.main-container img {
+.container img {
     float: left;
     width: 85px;
     height: 85px;
@@ -36,8 +36,9 @@ body {
     border-radius: 15px;
 }
 
-.main-container h1 {
-    margin-bottom: 70px;
+.container h1 {
+    padding-top: 80px;
+    margin-bottom: 50px;
     text-align: center;
     font-weight: bold;
     text-decoration: underline;

@@ -12,8 +12,13 @@
     </head>
 
     <body>
-        <div class="main-container">
-            <h1>Reserves Anteriors</h1>
+
+        <?php 
+            include("header.php");
+        ?>
+
+        <div class="container">
+            <h1>Reserves</h1>
 
             <h5>2023</h5>
             <?php 
@@ -25,8 +30,8 @@
                     </div>
 
                     <div class="info-container">
-                        <a href="">Nom de la casa</a>
-                        <p>Ubicació</p>
+                        <a href="">El Far</a>
+                        <p>Figueres, Catalunya</p>
                         <p>25-30 Octubre</p>
                     </div>
                 </div>
