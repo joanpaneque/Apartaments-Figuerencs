@@ -1,4 +1,5 @@
 <?php
     function ctrlRegister ($request, $response, $container) {
-        $reponse->setTemplate("register.php");
+        $response->setTemplate("register.php");
+        return $response;
     }

@@ -1,4 +1,6 @@
 <?php
     function ctrlReservation ($request, $response, $container) {
-        include "../src/views/reservation.php";
+        $response->setTemplate("reservation.php");
+
+        return $response;
     }
