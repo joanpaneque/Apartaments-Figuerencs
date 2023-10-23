@@ -9,14 +9,17 @@
     </head>
     <body>
 
-    <header class="navbar bg-light fixed-top">
+    <header class="header navbar bg-light fixed-top">
         <a href="/">
             <img src="../assets/img/logo-transparent.png" class="main-logo" alt="Logo">
         </a>
 
         <div class="d-flex flex-column align-items-center justify-content-center">
             <a href="?r=information">
-                <img src="../assets/svg/user.svg" class="user-logo" alt="User">
+                <div class="user-logo">
+                    <img src="../assets/svg/menu-burger.svg" alt="Burger">
+                    <img src="../assets/svg/user.svg" alt="User">
+                </div>
             </a>
         </div>
     </header>

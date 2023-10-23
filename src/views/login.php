@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="/styles/login.css">
         <title>Login</title>
     </head>
-
     <body>
         <div class="main-container">
             <img src="../assets/img/login-bg.jpg" class="background-img">
