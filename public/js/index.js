@@ -20,7 +20,6 @@ $.datepicker.setDefaults($.datepicker.regional['ca']);
 $("#date-entry").datepicker({ minDate: 0, maxDate: "+1M" });
 $("#date-exit").datepicker({ minDate: 0, maxDate: "+1M" });
 
-
 const travelers = new FloatingWindow($("#people"));
 
 // All traveler types are treated the same way, but make three if we want
@@ -49,13 +48,11 @@ travelers.setContent(travelerTypes.map(travelerType => `
     </div>
 `));
 
-
-
 var totalTravelers = 0;
 var totalAdults = 0;
 var totalChildren = 0;
 
-travelers.$(".traveler-add").on("click", e => {
+travelers.event("click", ".traveler-add", e => {
     if ($(e.currentTarget).hasClass("disabled")) return;
     const travelerNumber = $(e.currentTarget).siblings(".traveler-number");
     const number = parseInt(travelerNumber.text());
@@ -91,7 +88,7 @@ travelers.$(".traveler-add").on("click", e => {
     }
 });
 
-travelers.$(".traveler-remove").on("click", e => {
+travelers.event("click", ".traveler-remove", e => {
     if ($(e.currentTarget).hasClass("disabled")) return;
 
     // We remove all disabled classes from the add buttons
@@ -117,6 +114,10 @@ travelers.$(".traveler-remove").on("click", e => {
         if (totalAdults == 1 && totalChildren > 0) {
             travelers.$(".traveler-type[data-adult] .traveler-remove").addClass("disabled");
         }
+        if (totalAdults == 0) {
+            // Add disabled class to the add button of all traveler types that are not adults and can't go alone
+            travelers.$(".traveler-type:not([data-adult]):not([data-cangoalone]) .traveler-add").addClass("disabled");
+        }
     } else {
         totalChildren--;
         if (totalChildren == 0) {
@@ -130,4 +131,27 @@ travelers.$(".traveler-remove").on("click", e => {
             });
         }
     }
+});
+
+const dateForm = $("#date-form");
+
+dateForm.on("change", e => {
+    let entries = {};
+
+    $("#date-form input").each((index, element) => {
+        entries[element.name] = element.value;
+    });
+
+    $.ajax({
+        url: "?r=json-apartments",
+        method: "POST",
+        data: entries,
+        success: data => {
+            console.log(data);
+            if (data.error) {
+                console.error(data.error);
+                return;
+            }
+        }
+    });
 });
