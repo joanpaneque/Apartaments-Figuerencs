@@ -14,14 +14,22 @@
             <img src="../assets/img/logo-transparent.png" class="main-logo" alt="Logo">
         </a>
 
-        <div class="d-flex flex-column align-items-center justify-content-center">
-            <a href="?r=information">
-                <div class="user-logo">
-                    <img src="../assets/svg/menu-burger.svg" alt="Burger">
-                    <img src="../assets/svg/user.svg" alt="User">
+        <div class="dropdown">
+            <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="d-flex flex-column align-items-center justify-content-center">
+                    <div class="user-logo">
+                        <img src="../assets/svg/menu-burger.svg" alt="Burger">
+                        <img src="../assets/svg/user.svg" alt="User">
+                    </div>
                 </div>
-            </a>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="?r=login">Login</a></li>
+                <li><a class="dropdown-item" href="?r=register">Register</a></li>
+            </ul>
         </div>
+
+
     </header>
 
 
@@ -29,4 +37,3 @@
     </body>
 
 </html>
-

@@ -3,17 +3,10 @@ header {
     padding: 0 40px !important;
 }
 
+
+/* ########## LOGOS */
 .main-logo {
     height: 45px
-}
-
-.user-logo img {
-    height: 100%;
-}
-
-.user-logo img:first-child {
-    height: 100%;
-    opacity: 0.33;
 }
 
 .user-logo {
@@ -25,11 +18,26 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 10px;
+}
 
-    /* width: 200px; */
+.user-logo img {
+    height: 100%;
+}
 
-    /* --box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.3);
-    box-shadow: var(--box-shadow);
-    -webkit-box-shadow: var(--box-shadow);
-    -moz-box-shadow: var(--box-shadow); */
+.user-logo img:first-child {
+    height: 100%;
+    opacity: 0.33;
+}
+
+
+/* ########## DROPDOWN */
+
+.dropdown button {
+    border: 0;
+    background-color: initial;
+}
+
+
+.dropdown-menu {
+    min-width: 100px !important;
 }
