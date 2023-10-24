@@ -17,8 +17,7 @@ namespace Emeset;
  *
  * Classe contenidor, la responsabilitat d'instaciar els models i altres objectes.
  **/
-class Container
-{
+class Container {
     public $config = [];
     public $sql;
 
@@ -27,19 +26,20 @@ class Container
      *
      * @param $config array paràmetres de configuració de l'aplicació.
      **/
-    public function __construct($config)
-    {
+    public function __construct($config) {
         $this->config = $config;
     }
 
-    public function response()
-    {
+    public function response() {
         return new \Emeset\Response();
     }
 
-    public function request()
-    {
+    public function request() {
         return new \Emeset\Request();
+    }
+
+    public function apartments() {
+        return new \Daw\Apartments($this->config);
     }
 
 }

@@ -15,9 +15,9 @@
     <title>Index</title>
 </head>
 <body>
-    <? require 'header.php'; ?>
+    <?php require 'header.php' ?>
     <div class="container">
-        <nav class="row">
+        <nav class="row booking-inputs">
             <form id="date-form" class="col-10">
                 <div class="apartment-dates">
                     <div class="date-container date-entry">
@@ -38,76 +38,8 @@
                 <img class="icon" src="assets/svg/settings-sliders.svg">
             </div>
         </nav>
+        <div id="apartments" class="apartments">
+        </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 </body>
 </html>

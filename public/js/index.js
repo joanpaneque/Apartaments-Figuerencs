@@ -15,7 +15,6 @@ $.datepicker.regional["ca"] = {
 };
 $.datepicker.setDefaults($.datepicker.regional['ca']);
 
-
 // Instances of the datepicker widgets with the proper configuration
 $("#date-entry").datepicker({ minDate: 0, maxDate: "+1M" });
 $("#date-exit").datepicker({ minDate: 0, maxDate: "+1M" });
@@ -137,21 +136,48 @@ const dateForm = $("#date-form");
 
 dateForm.on("change", e => {
     let entries = {};
-
     $("#date-form input").each((index, element) => {
         entries[element.name] = element.value;
     });
+    updateApartments(entries);
+});
 
+updateApartments();
+
+function updateApartments(entries = { people: "a" }) {
     $.ajax({
-        url: "?r=json-apartments",
+        url: "?r=apartments",
         method: "POST",
         data: entries,
         success: data => {
-            console.log(data);
             if (data.error) {
                 console.error(data.error);
                 return;
             }
+            const apartments = JSON.parse(data);
+            $("#apartments").empty();
+            console.log(apartments);
+            apartments.forEach(apartment => {
+                const apartmentElement = $(`
+                    <article class="apartment">
+                        <div class="apartment-image">
+                            <img class="" src="${apartment.images[0]}">
+                        </div>
+                        <div class="apartment-info">
+                            <div class="apartment-line">
+                                <div class="apartment-description">${apartment.short_description}</div>
+                                <div class="apartment-stars"><img src="assets/svg/star.svg">5,0</div>
+                            </div>
+                            <div class="apartment-line">
+                                <div class="apartment-rooms">${apartment.rooms} habitacions</div>
+                            </div>
+                            <div class="apartment-price">${apartment.price_peak_season}€</div>
+                        </div>
+                    </article>
+                `);
+
+                $("#apartments").append(apartmentElement);
+            });
         }
     });
-});
+}
