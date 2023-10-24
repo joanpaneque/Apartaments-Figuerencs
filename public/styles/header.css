@@ -6,7 +6,7 @@ header {
 
 /* ########## LOGOS */
 .main-logo {
-    height: 45px
+    height: 45px;
 }
 
 .user-logo {
@@ -36,7 +36,6 @@ header {
     border: 0;
     background-color: initial;
 }
-
 
 .dropdown-menu {
     min-width: 100px !important;

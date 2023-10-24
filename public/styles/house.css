@@ -12,7 +12,7 @@
 .info,
 .description,
 .offers,
-.map,
+.map-container,
 .rules {
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
@@ -22,7 +22,7 @@
 .offers,
 .rules,
 .fix,
-.map h4 {
+.map-container h4 {
     padding: 12px;
 }
 
@@ -42,8 +42,6 @@ h6 {
 }
 
 .image img {
-    padding: 0;
-    padding-top: 65px;
     width: 100%;
     height: 350px;
     object-fit: cover;
@@ -64,20 +62,23 @@ h6 {
 
 
 /* ########## MAP CONTAINER */
-.map iframe {
-    width: 100%;
-    height: 280px;
+#map { 
+    height: 40vh;
+    margin-bottom: 5px;
 }
 
+/* ######## RULES CONTAINER */
 .rules {
     margin-bottom: 50px;
 }
 
 
+/* ######### BOTTOM BAR FIXED */
 .fix {
     width: 100%;
     height: 70px;
     background-color: rgb(247, 247, 247);
+    z-index: 1000;
 }
 
 .fix button {
@@ -199,7 +200,11 @@ h6 {
 
 
 
-
+@media screen and (max-width: 480px) {
+    .reservation-container {
+        display: none;
+    }
+}
 
 /* ########### TABLET */
 @media screen and (min-width: 480px) {
@@ -207,23 +212,80 @@ h6 {
 
 /* ########### PC */
 @media screen and (min-width: 960px) {
-    .image,
-    .map iframe {
+    .container {
+        padding: 100px 100px 0;
+    }
+
+
+    /* CAROUSEL */
+
+    .image {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .carousel-inner {
         border-radius: 15px;
     }
 
-    .image {
-        width: 25%;
-        height: 25%;
+    .carousel {
+        width: 800px;
     }
 
-    .map iframe {
-        width: 50%;
+    .carousel-item img {
+        height: 450px;
+        width: 800px;
+    }
+    
+
+    /* CONTAINER RESERVATION */
+    .reservation-container {
+        width: 300px;
+        box-shadow: 0 5px 10px #0000004d;
+        border-radius: 15px;
+        padding: 0 15px 15px 15px;
+    }
+
+    .dates-hosts h4,
+    .price h4 {
+        font-size: 18px;
+    }
+
+    .dates {
+        font-size: 15px;
+    }
+
+    .right-aligned-content {
+        font-size: 12px;
+    }
+
+    .text-container,
+    .text,
+    .number {
+        font-size: 15px;
+    }
+
+    .total p:first-child {
+        font-size: 18px;
+    }
+
+    .container-button button {
+        width: 80%;
+        font-size: 15px;
+        margin-top: -5px;
+    }
+
+
+
+    /* MAP */
+    #map {
+        height: 50vh;
     }
 
 
 
 
+    /* BOTTOM BAR FIXED */
     .fix {
         display: none;
     }
