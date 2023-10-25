@@ -175,10 +175,10 @@ function updateApartments(entries) {
                 console.error(data.error);
                 return;
             }
+            console.log(data);
             const apartments = JSON.parse(data);
             $("#apartments").empty();
-            console.log(apartments);
-            apartments.forEach(apartment => {
+            apartments.apartments.forEach(apartment => {
                 const apartmentElement = $(`
                     <article class="apartment">
                         <div class="apartment-image">
@@ -200,12 +200,12 @@ function updateApartments(entries) {
                 $("#apartments").append(apartmentElement);
             });
 
-            $(".apartment").hover(e => {
-                $(".apartment").css("opacity", "0.8");
-                $(e.currentTarget).css("opacity", "1");
-            }, () => {
-                $(".apartment").css("opacity", "1");
-            });
+            // $(".apartment").hover(e => {
+            //     $(".apartment").css("opacity", "0.8");
+            //     $(e.currentTarget).css("opacity", "1");
+            // }, () => {
+            //     $(".apartment").css("opacity", "1");
+            // });
         }
     });
 }
