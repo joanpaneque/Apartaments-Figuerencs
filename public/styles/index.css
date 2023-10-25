@@ -140,6 +140,11 @@ label {
 .traveler-number {
     width: 10px;
     text-align: center;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 9086ec6 (Commit random)
 }
 
 .apartment-image img {
@@ -193,4 +198,8 @@ label {
     display: flex;
     align-items: center;
     gap: 5px;
+<<<<<<< HEAD
+=======
+>>>>>>> cbcda2440f124f880131c371aecf18d8220afec4
+>>>>>>> 9086ec6 (Commit random)
 }
