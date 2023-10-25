@@ -5,16 +5,12 @@ namespace Daw;
 class Apartments {
     private $sql;
 
-    public function __construct($config) {
-        $conn = new \Daw\Connection($config);
-        $this->sql = $conn->getConnection();
+    public function __construct($sql) {
+        $this->sql = $sql;
     }
 
     public function get($date1, $date2, $people) {
-        // print_r($date1 . "\n");
-        // print_r($date2 . "\n");
-        // print_r($people . "\n");
-    
+
         $query = "
         SELECT a.*, i.url
         FROM apartments a
@@ -48,6 +44,6 @@ class Apartments {
             $apartmentsWithImages[] = $apartment;
         }
     
-        return json_encode($apartmentsWithImages);
+        return $apartmentsWithImages;
     }
 }

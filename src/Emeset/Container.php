@@ -28,6 +28,8 @@ class Container {
      **/
     public function __construct($config) {
         $this->config = $config;
+        $conn = new \Daw\Connection($config);
+        $this->sql = $conn->getConnection();
     }
 
     public function response() {
@@ -39,7 +41,7 @@ class Container {
     }
 
     public function apartments() {
-        return new \Daw\Apartments($this->config);
+        return new \Daw\Apartments($this->sql);
     }
 
 }

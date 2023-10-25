@@ -22,16 +22,17 @@ function ctrlApartments($request, $response, $container) {
         $people = 0;
     }
 
-    $response->set("dateEntry", $dateEntry);
-    $response->set("dateExit", $dateExit);
-    $response->set("people", $people);
+    // $response->set("dateEntry", $dateEntry);
+    // $response->set("dateExit", $dateExit);
+    // $response->set("people", $people);
 
-    $apartmentsInstance = $container->apartments();
-    $apartments = $apartmentsInstance->get($dateEntry, $dateExit, $people);
+    $apartments = $container->apartments()->get($dateEntry, $dateExit, $people);
 
     $response->set("apartments", $apartments);
 
-    $response->setTemplate("apartments.php");
+    $response->setJson();
+
+    // print_r($response);
     return $response;
     
 }

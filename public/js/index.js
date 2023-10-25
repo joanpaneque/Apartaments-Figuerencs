@@ -199,13 +199,6 @@ function updateApartments(entries) {
 
                 $("#apartments").append(apartmentElement);
             });
-
-            // $(".apartment").hover(e => {
-            //     $(".apartment").css("opacity", "0.8");
-            //     $(e.currentTarget).css("opacity", "1");
-            // }, () => {
-            //     $(".apartment").css("opacity", "1");
-            // });
         }
     });
 }
