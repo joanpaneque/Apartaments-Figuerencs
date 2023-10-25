@@ -11,17 +11,26 @@ class Apartments {
     }
 
     public function get($date1, $date2, $people) {
-        // Default values
-        if ($date1 === "") $date1 = "1970-01-01";
-        if ($date2 === "") $date2 = "2100-01-01";
-        if ($people === "") $people = 0;
+        // print_r($date1 . "\n");
+        // print_r($date2 . "\n");
+        // print_r($people . "\n");
     
         $query = "
-            SELECT a.*, i.url
-            FROM apartments a
-            LEFT JOIN images i ON a.code = i.apartment_code
-            WHERE a.capacity >= :people
-            AND a.code NOT IN (SELECT apartment_code FROM bookings WHERE date1 <= :date2 AND date2 >= :date1 AND cancelled = 0)
+        SELECT a.*, i.url
+        FROM apartments a
+        LEFT JOIN images i ON a.code = i.apartment_code
+        WHERE a.capacity >= :people
+        AND a.code NOT IN (
+            SELECT apartment_code
+            FROM bookings
+            WHERE (
+                (date1 BETWEEN :date1 AND :date2)
+                OR (date2 BETWEEN :date1 AND :date2)
+                OR (:date1 BETWEEN date1 AND date2)
+                OR (:date2 BETWEEN date1 AND date2)
+            )
+            AND cancelled = 0
+        )
         ";
     
         $stmt = $this->sql->prepare($query);

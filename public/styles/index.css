@@ -148,7 +148,7 @@ label {
 }
 
 .apartment-image {
-    max-height: 300px;
+    max-height: 400px;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -161,10 +161,20 @@ label {
     margin-bottom: 20px;
 }
 
-.apartments {
-    display: grid;
-    gap: 30px;
+
+.apartments:hover {
+    cursor: pointer;
 }
+
+.apartment-image {
+    transition: 0.1s ease-in-out;
+}
+
+.apartment:hover .apartment-image {
+    transform: scale(1.03);
+    transition: 0.1s ease-in-out;
+}
+
 
 .apartment-description {
     font-weight: bold;

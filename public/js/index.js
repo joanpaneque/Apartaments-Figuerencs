@@ -19,6 +19,17 @@ $.datepicker.setDefaults($.datepicker.regional['ca']);
 $("#date-entry").datepicker({ minDate: 0, maxDate: "+1M" });
 $("#date-exit").datepicker({ minDate: 0, maxDate: "+1M" });
 
+// Set date entry value to today
+$("#date-entry").val(currentDate());
+$("#date-exit").val(currentDate(1));
+
+// If date-entry is changed, we update the minDate of date-exit plus one day
+$("#date-entry").on("change", e => {
+    const date = $("#date-entry").datepicker("getDate");
+    date.setDate(date.getDate() + 1);
+    $("#date-exit").datepicker("option", "minDate", date);
+});
+
 const travelers = new FloatingWindow($("#people"));
 
 // All traveler types are treated the same way, but make three if we want
@@ -37,11 +48,11 @@ travelers.setContent(travelerTypes.map(travelerType => `
         </div>
         <div class="traveler-selector">
             <div class="traveler-remove disabled">
-                <img src="/assets/svg/minus-small.svg">
+                <img src="/assets/svg/minus-small.svg" alt="restar" >
             </div>
             <div class="traveler-number">0</div>
             <div class="traveler-add ${travelerType.canGoAlone || travelerType.adult ? "" : "disabled"}">
-                <img src="/assets/svg/plus-small.svg">
+                <img src="/assets/svg/plus-small.svg" alt="sumar">
             </div>
         </div>
     </div>
@@ -142,9 +153,19 @@ dateForm.on("change", e => {
     updateApartments(entries);
 });
 
-updateApartments();
+function YYYYMMDD(date) {
+    return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+}
 
-function updateApartments(entries = { people: "a" }) {
+function currentDate(plusDays = 0) {
+    const date = new Date();
+    date.setDate(date.getDate() + plusDays);
+    return YYYYMMDD(date);
+}
+
+updateApartments({ "date-entry": currentDate(), "date-exit": currentDate(1) });
+
+function updateApartments(entries) {
     $.ajax({
         url: "?r=apartments",
         method: "POST",
@@ -161,12 +182,12 @@ function updateApartments(entries = { people: "a" }) {
                 const apartmentElement = $(`
                     <article class="apartment">
                         <div class="apartment-image">
-                            <img class="" src="${apartment.images[0]}">
+                            <img class="" src="${apartment.images[0]}" alt="Imatge del apartament '${apartment.short_description}'">
                         </div>
                         <div class="apartment-info">
                             <div class="apartment-line">
                                 <div class="apartment-description">${apartment.short_description}</div>
-                                <div class="apartment-stars"><img src="assets/svg/star.svg">5,0</div>
+                                <div class="apartment-stars"><img src="assets/svg/star.svg" alt="Icona d'estrella">5,0</div>
                             </div>
                             <div class="apartment-line">
                                 <div class="apartment-rooms">${apartment.rooms} habitacions</div>
@@ -177,6 +198,13 @@ function updateApartments(entries = { people: "a" }) {
                 `);
 
                 $("#apartments").append(apartmentElement);
+            });
+
+            $(".apartment").hover(e => {
+                $(".apartment").css("opacity", "0.8");
+                $(e.currentTarget).css("opacity", "1");
+            }, () => {
+                $(".apartment").css("opacity", "1");
             });
         }
     });

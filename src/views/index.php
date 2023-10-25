@@ -19,6 +19,7 @@
     <div class="container">
         <nav class="row booking-inputs">
             <form id="date-form" class="col-10">
+                <input type="submit" class="hidden" name="dummy" id="dummy" value="dummy">
                 <div class="apartment-dates">
                     <div class="date-container date-entry">
                         <label for="date-entry" class="left">Arribada</label>
@@ -35,11 +36,16 @@
                 </div>
             </form>
             <div class="col-2">
-                <img class="icon" src="assets/svg/settings-sliders.svg">
+                <img class="icon" src="assets/svg/settings-sliders.svg" alt="Filtres">
             </div>
         </nav>
-        <div id="apartments" class="apartments">
-        </div>
+        <div id="apartments" class="apartments row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 g-lg-4">
+    <!-- Contenido de las columnas -->
+</div>
+
+
+
+
     </div>
 </body>
 </html>

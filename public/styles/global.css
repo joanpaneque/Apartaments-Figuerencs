@@ -28,3 +28,7 @@ body {
     margin-top: 65px;
     padding-top: 20px;
 }
+
+.hidden {
+    display: none;
+}
