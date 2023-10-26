@@ -34,13 +34,13 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="../assets/img/exterior.jpg" class="d-block" alt="">
+                                <img src="../assets/img/exterior.jpg" class="d-block" alt="Exterior">
                             </div>
                             <div class="carousel-item">
-                                <img src="../assets/img/interior.jpg" class="d-block" alt="">
+                                <img src="../assets/img/interior.jpg" class="d-block" alt="Interior">
                             </div>
                             <div class="carousel-item">
-                                <img src="../assets/img/pool.jpg" class="d-block" alt="">
+                                <img src="../assets/img/pool.jpg" class="d-block" alt="Piscina">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -116,7 +116,9 @@
                         </div>
                     
                         <div class="container-button">
-                            <button type="button" class="btn btn-primary">Reserva</button>
+                            <a href="?r=tpv">
+                                <button type="button" class="btn btn-primary">Reserva</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -137,7 +139,7 @@
                 <h4>Descripció</h4>
                 <p>
                     Aquesta casa està situada a una petita ciutat de l'alt Empordà, Figueres.
-                    Conta de 5 dormitoris amb 3 banys, una piscina i espai suficient per tota una familia,
+                    Conta de 5 dormitoris amb 3 banys, una piscina i espai suficient per tota una familia.
                     És un espai força gran i moder, perfecte per disfrutar tant amb familia, com amb amics, com amb la parella.
                 </p>
                 <p>

@@ -24,9 +24,3 @@ L.marker (
         icon: redIcon
     }
 ).addTo(map);
-
-// Create html information to show when i click the icon 
-marker.addTo(map).bindPopup (
-    "<p><b>Institut Cendrassos</b></p>"
-).openPopup();
-

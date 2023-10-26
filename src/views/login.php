@@ -12,19 +12,21 @@
     </head>
     <body>
         <div class="main-container">
-            <img src="../assets/img/login-bg.jpg" class="background-img">
+            <img src="../assets/img/pool.jpg" class="background-img" alt="Outside Pool">
 
             <div class="login-container">
                 <h1>Login</h1>
 
                 <form action="">
-                    <h5>Correu:</h5>
-                    <input type="text" name="mail" class="text-input" required>
-
-                    <h5>Contrasenya:</h5>
-                    <input type="text" name="password" class="text-input" required>
-
-                    <br>
+                    <label for="mail">
+                        <h5>Correu:</h5>
+                        <input type="text" name="mail" class="text-input" required>
+                    </label>
+                    
+                    <label for="password">
+                        <h5>Contrasenya:</h5>
+                        <input type="text" name="password" class="text-input" required>
+                    </label>
 
                     <button>Enviar</button>
 

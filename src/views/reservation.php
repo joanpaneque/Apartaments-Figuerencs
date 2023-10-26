@@ -24,7 +24,7 @@
                 <div class="group">
                     <div class="img">
                         <a href="?r=house">
-                            <img src="../assets/img/exterior.jpg" alt="">
+                            <img src="../assets/img/exterior.jpg" alt="Exterior">
                         </a>
                     </div>
                     <div class="info-container">
@@ -44,7 +44,7 @@
             <?php for ($i = 0; $i < 5; $i++) { ?>
                 <div class="group">
                     <div class="img">
-                        <img src="../assets/img/interior.jpg" alt="">
+                        <img src="../assets/img/interior.jpg" alt="Interior">
                     </div>
                     <div class="info-container">
                         <div class="text-container">

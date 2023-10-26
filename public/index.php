@@ -20,14 +20,15 @@
     include "../src/controllers/index.php";
     include "../src/controllers/json-apartments.php";
     include "../src/controllers/house.php";
+    include "../src/controllers/tpv.php";
     
     $r = $_REQUEST["r"] ?? "";
 
     if ($r == "") {
         ctrlIndex($request, $response, $container);
-    } else if ($r == "json-apartments") {
+    } elseif ($r == "json-apartments") {
         ctrlJsonApartments($request, $response, $container);
-    } else if ($r === "login") {
+    } elseif ($r === "login") {
         ctrlLogin($request, $response, $container);
     } elseif ($r === "register") {
         ctrlRegister($request, $response, $container);
@@ -37,6 +38,8 @@
         ctrlReservation($request, $response, $container);
     } elseif ($r === "house") {
         ctrlHouse($request, $response, $container);
+    } elseif ($r === "tpv") {
+        ctrlTpv($request, $response, $container);
     } else {
         echo "404";
     } 
