@@ -7,10 +7,7 @@
  *
  * Classe contenidor,  té la responsabilitat d'instaciar els models i altres objectes.
  **/
-<<<<<<< HEAD
-=======
 
->>>>>>> 9086ec6 (Commit random)
 namespace Emeset;
 
 /**
@@ -46,8 +43,5 @@ class Container {
     public function apartments() {
         return new \Daw\Apartments($this->sql);
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 9086ec6 (Commit random)
 }

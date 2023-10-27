@@ -15,28 +15,14 @@
     <title>Index</title>
 </head>
 <body>
-<<<<<<< HEAD
-    <?php require 'header.php' ?>
-=======
-<<<<<<< HEAD
->>>>>>> 9086ec6 (Commit random)
-    <div class="container">
-        <nav class="row booking-inputs">
-            <form id="date-form" class="col-10">
-<<<<<<< HEAD
-                <input type="submit" class="hidden" name="dummy" id="dummy" value="dummy">
-=======
-=======
     <?php require 'header.php' ?>
     <div class="container">
         <nav class="row booking-inputs">
             <form id="date-form" class="col-10">
                 <input type="submit" class="hidden" name="dummy" id="dummy" value="dummy">
->>>>>>> cbcda2440f124f880131c371aecf18d8220afec4
->>>>>>> 9086ec6 (Commit random)
                 <div class="apartment-dates">
                     <div class="date-container date-entry">
-                        <label for="date-entry" class="left">Arribada</label>
+                        <label for="date-entry" class="left">ArribadaChange</label>
                         <input name="date-entry" placeholder="Introdueix la data d'entrada" type="text" id="date-entry" class="nav-input">
                     </div>
                     <div class="date-container date-exit">
@@ -50,20 +36,9 @@
                 </div>
             </form>
             <div class="col-2">
-<<<<<<< HEAD
                 <img class="icon" src="assets/svg/settings-sliders.svg" alt="Filtres">
             </div>
         </nav>
-=======
-<<<<<<< HEAD
-                <img class="icon" src="assets/svg/settings-sliders.svg">
-            </div>
-        </nav>
-=======
-                <img class="icon" src="assets/svg/settings-sliders.svg" alt="Filtres">
-            </div>
-        </nav>
->>>>>>> 9086ec6 (Commit random)
         <div id="apartments" class="apartments row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 g-lg-4">
     <!-- Contenido de las columnas -->
 </div>
@@ -71,10 +46,6 @@
 
 
 
-<<<<<<< HEAD
-=======
->>>>>>> cbcda2440f124f880131c371aecf18d8220afec4
->>>>>>> 9086ec6 (Commit random)
     </div>
 </body>
 </html>

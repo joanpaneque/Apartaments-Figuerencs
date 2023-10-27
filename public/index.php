@@ -1,33 +1,4 @@
 <?php
-
-<<<<<<< HEAD
-    // Configuration
-    include "../src/config.php";
-=======
-<<<<<<< HEAD
-// Configuration
-include "../src/config.php";
->>>>>>> 9086ec6 (Commit random)
-
-    // Models
-    include "../src/models/connection.php";
-    include "../src/models/apartments.php"; 
-
-    // Emeset library
-    include "../src/Emeset/Container.php";
-    include "../src/Emeset/Request.php";
-    include "../src/Emeset/Response.php";
-
-<<<<<<< HEAD
-=======
-if ($r == "") {
-    ctrlIndex();
-} else if ($r == "json-apartments") {
-    ctrlJsonApartments();
-} else {
-    echo "404";
-}
-=======
     // Configuration
     include "../src/config.php";
 
@@ -40,7 +11,6 @@ if ($r == "") {
     include "../src/Emeset/Request.php";
     include "../src/Emeset/Response.php";
 
->>>>>>> 9086ec6 (Commit random)
     $request = new \Emeset\Request();
     $response = new \Emeset\Response();
     $container = new \Emeset\Container($config);
@@ -75,7 +45,3 @@ if ($r == "") {
     } 
 
     $response->response();
-<<<<<<< HEAD
-=======
->>>>>>> cbcda2440f124f880131c371aecf18d8220afec4
->>>>>>> 9086ec6 (Commit random)

@@ -201,8 +201,4 @@ function updateApartments(entries) {
             });
         }
     });
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9086ec6 (Commit random)
