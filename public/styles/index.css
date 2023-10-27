@@ -141,3 +141,56 @@ label {
     width: 10px;
     text-align: center;
 }
+
+.apartment-image img {
+    width: 100%;
+
+}
+
+.apartment-image {
+    max-height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin-bottom: 12px;
+}
+
+.booking-inputs {
+    margin-bottom: 20px;
+}
+
+
+.apartments:hover {
+    cursor: pointer;
+}
+
+.apartment-image {
+    transition: 0.1s ease-in-out;
+}
+
+.apartment:hover .apartment-image {
+    transform: scale(1.03);
+    transition: 0.1s ease-in-out;
+}
+
+
+.apartment-description {
+    font-weight: bold;
+}
+
+.apartment-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.apartment-stars img {
+    height: 12px;
+}
+
+.apartment-stars {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

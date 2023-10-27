@@ -19,6 +19,14 @@ CREATE TABLE apartments (
     PRIMARY KEY (code)
 );
 
+CREATE TABLE images (
+    url VARCHAR(255),
+    code INT AUTO_INCREMENT,
+    apartment_code INT,
+    PRIMARY KEY (code),
+    FOREIGN KEY (apartment_code) REFERENCES apartments(code)
+);
+
 CREATE TABLE statuses (
     status TEXT,
     comment TEXT,
@@ -82,3 +90,4 @@ CREATE TABLE seasons (
     PRIMARY KEY (code),
     FOREIGN KEY (apartment_code) REFERENCES apartments(code)
 );
+
