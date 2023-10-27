@@ -197,6 +197,10 @@ function updateApartments(entries) {
                     </article>
                 `);
 
+                apartmentElement.on("click", e => {
+                    window.location.href = `?r=house&id=${apartment.code}`;
+                });
+
                 $("#apartments").append(apartmentElement);
             });
         }
