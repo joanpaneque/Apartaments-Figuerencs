@@ -201,6 +201,8 @@ function updateApartments(entries) {
                     window.location.href = `?r=house&id=${apartment.code}`;
                 });
 
+                // Test
+
                 $("#apartments").append(apartmentElement);
             });
         }
