@@ -26,7 +26,7 @@
                         <input name="date-entry" placeholder="Introdueix la data d'entrada" type="text" id="date-entry" class="nav-input">
                     </div>
                     <div class="date-container date-exit">
-                        <label for="date-exit">Sortida</label>
+                        <label for="date-exit">SortidaChange</label>
                         <input name="date-exit" placeholder="Introdueix la data de sortida" type="text" id="date-exit" class="nav-input">
                     </div>
                     <div class="date-container people">
