@@ -21,7 +21,8 @@
     include "../src/controllers/json-apartments.php";
     include "../src/controllers/house.php";
     include "../src/controllers/tpv.php";
-    
+    include "../src/controllers/gestor.php";
+
     $r = $_REQUEST["r"] ?? "";
 
     if ($r == "") {
@@ -40,6 +41,8 @@
         ctrlHouse($request, $response, $container);
     } elseif ($r === "tpv") {
         ctrlTpv($request, $response, $container);
+    } elseif ($r === "gestor") {
+        ctrlGestor($request, $response, $container);
     } else {
         echo "404";
     } 
