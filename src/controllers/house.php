@@ -18,6 +18,7 @@
             $response->set("dateExit", $dateExit);
             $response->set("people", $people);
             $response->set("shortDescription", $apartament["short_description"]);
+            $response->set("name", $apartament["title"]);
 
             $response->setTemplate("house.php");
         } else {

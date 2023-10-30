@@ -124,7 +124,7 @@
 
 
                 <div class="paragraph">
-                    <h1><?= $shortDescription ?> </h1>
+                    <h1><?= $name ?></h1>
                     <h5>Figueres, Catalunya</h5>
                     <h5 class="postal">17600</h5>
                     <h6>5 dormitoris | 3 banys</h6>
@@ -136,11 +136,7 @@
             <!-- CONTAINER DESCRIPTION -->
             <div class="description">
                 <h4>Descripció</h4>
-                <p>
-                    Aquesta casa està situada a una petita ciutat de l'alt Empordà, Figueres.
-                    Conta de 5 dormitoris amb 3 banys, una piscina i espai suficient per tota una familia.
-                    És un espai força gran i moder, perfecte per disfrutar tant amb familia, com amb amics, com amb la parella.
-                </p>
+                <p><?= $shortDescription ?></p>
                 <p>
                     Aquest espai està en un terreny de 750 m².
                 </p>
