@@ -15,9 +15,8 @@
 
     <body>
 
-        <?php 
-            include("header.php");
-        ?>
+        <?php require 'header.php' ?>
+
 
 
         <div class="container">
