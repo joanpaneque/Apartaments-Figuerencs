@@ -6,9 +6,6 @@
         $people = $request->get(INPUT_GET, "people");
 
 
-
-
-
         $isAvailable = $container->apartments()->isAvailable($id, $dateEntry, $dateExit, $people);
 
 
@@ -19,6 +16,17 @@
             $response->set("people", $people);
             $response->set("shortDescription", $apartament["short_description"]);
             $response->set("name", $apartament["title"]);
+            $response->set("squareMeters", $apartament["square_meters"]);
+            $response->set("rooms", $apartament["rooms"]);
+            $response->set("postalAddress", $apartament["postal_address"]);
+            $response->set("pricePeakSeason", $apartament["price_peak_season"]);
+            $response->set("longitude", $apartament["longitude"]);
+            $response->set("latitude", $apartament["latitude"]);
+
+            $services = explode(",", $apartament["services"]);
+            // Now, $services should be an array
+            $response->set("services", $services);
+            
 
             $response->setTemplate("house.php");
         } else {

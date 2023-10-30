@@ -63,11 +63,37 @@
                                     </div>
                                 </ul>
                                 <p class="right-aligned-content">
-                                    <?= $dateEntry ?>
-                                    <br>
-                                    <?= $dateExit ?>
+                                    <?php
+                                        $mesosCatala = [
+                                            1 => "Gen",
+                                            2 => "Feb",
+                                            3 => "Març",
+                                            4 => "Abr",
+                                            5 => "Maig",
+                                            6 => "Juny",
+                                            7 => "Jul",
+                                            8 => "Ag",
+                                            9 => "Set",
+                                            10 => "Oct",
+                                            11 => "Nov",
+                                            12 => "Des"
+                                        ];
 
+
+                                        $dia = date('j', strtotime($dateEntry));
+                                        $mes = $mesosCatala[date('n', strtotime($dateEntry))];
+
+                                        echo $dia . " " . $mes;
+                                    ?>
+                                    <br>
+                                    <?php
+                                        $dia = date('j', strtotime($dateExit));
+                                        $mes = $mesosCatala[date('n', strtotime($dateExit))];
+
+                                        echo $dia . " " . $mes;
+                                    ?>
                                 </p>
+
                             </div>
 
                             <div class="hosts">
@@ -78,11 +104,9 @@
                                 </ul>
                                <p class="right-aligned-content">
                                     <?= $people ?> viatjers
-            
                                 </p>
                             </div>
                         </div>
-
 
                         <div class="price">
                             <h4>Preu</h4>
@@ -92,7 +116,7 @@
                                         <p>Preu per nit</p>
                                     </div>
                                 </ul>    
-                                <p class="right-aligned-content number">€ 195</p>
+                                <p class="right-aligned-content number">€ <?= $pricePeakSeason ?></p>
                             </div>
                             <div class="nights">
                                 <ul>
@@ -100,7 +124,25 @@
                                         <p>Número de nits</p>
                                     </div>
                                 </ul>    
-                                <p class="right-aligned-content number">3</p>
+                                <p class="right-aligned-content number">
+                                    <?php
+
+                                        // Canvia el format per mostrar-les
+                                        $dateEntryFormatted = date('d/m/Y', strtotime($dateEntry));
+                                        $dateExitFormatted = date('d/m/Y', strtotime($dateExit));
+
+                                        // Les dues dates que vols comparar
+                                        $data1 = new DateTime($dateEntry);
+                                        $data2 = new DateTime($dateExit);
+
+                                        // Calcula la diferencia en dies entre les dues dates
+                                        $diferencia = $data1->diff($data2);
+
+                                        $nombreNits = $diferencia->days;
+
+                                        echo $nombreNits;
+                                    ?>
+                                </p>
                             </div>
 
                             <div class="total">
@@ -109,7 +151,15 @@
                                         <p>Total</p>
                                     </div>
                                 </ul>
-                                <p class="right-aligned-content number">€ 585</p>
+                                <p class="right-aligned-content number">
+                                    € 
+                                    <?php
+                                        $total = $pricePeakSeason * $nombreNits;
+                                        
+                                        // Afegeix .00
+                                        echo number_format($total, 2);
+                                    ?>
+                                </p>
                             </div>
 
                         </div>
@@ -126,8 +176,17 @@
                 <div class="paragraph">
                     <h1><?= $name ?></h1>
                     <h5>Figueres, Catalunya</h5>
-                    <h5 class="postal">17600</h5>
-                    <h6>5 dormitoris | 3 banys</h6>
+                    <h5 class="postal"><?= $postalAddress ?></h5>
+                    <h6>
+                        <?php
+                            if ($rooms == 1) {
+                                echo "1 dormitori";
+                            } else {
+                                echo $rooms . " dormitoris ";
+                            }
+                        ?>
+                    </h6>
+
                 </div>
                 
             </div>
@@ -136,29 +195,39 @@
             <!-- CONTAINER DESCRIPTION -->
             <div class="description">
                 <h4>Descripció</h4>
-                <p><?= $shortDescription ?></p>
+
+                <p><?= nl2br($shortDescription) ?></p>
+                <!-- nl2br is used to apply the integers in the database  -->
+
                 <p>
-                    Aquest espai està en un terreny de 750 m².
+                    Aquest espai està en un terreny de <?= $squareMeters ?> m².
                 </p>
             </div>
+
 
 
             <!-- CONTAINER OFFERS -->
             <div class="offers">
                 <h4>Que ofereix?</h4>
                 <ul>
-                    <li>Wifi</li>
-                    <li>Parking</li>
-                    <li>Cuina</li>
-                    <li>Vistes al mar</li>
+                    <?php
+                        // Combina els elements amb salts de linia
+                        $servicesList = implode("\n", $services);
+                        // Genera una unica llista amb els elements
+                        echo '<li>' . str_replace("\n", '</li><li>', $servicesList) . '</li>';
+
+                        // we don't do a foreach because the bbdd is set up in a way that a list wouldn't be made, that's why I do the implode
+                        // we don't use nl2br like the description because then we lose the dots of the list
+                    ?>
                 </ul>
             </div>
+
 
 
             <!-- CONTAINER MAP -->
             <div class="map-container">
                 <h4>Ubicació</h4>
-                <div id="map"></div>
+                <div id="map" data-latitude="<?= $latitude ?>" data-longitude="<?= $longitude ?>"></div>
             </div>
 
 
@@ -171,7 +240,7 @@
             </div>
 
 
-            <!-- Botó per obrir el modal -->
+            <!-- Boto per obrir el modal -->
             <div class="position-fixed bottom-0 fix">
                 <p><strong>€149</strong> per nit</p>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalReserva">Reserva</button>
@@ -207,8 +276,19 @@
                                         </div>
                                     </ul>
                                     <p class="right-aligned-content">
-                                        18 Oct
-                                        20 Oct
+                                        <?php
+                                        $dia = date('j', strtotime($dateEntry));
+                                            $mes = $mesosCatala[date('n', strtotime($dateEntry))];
+
+                                            echo $dia . " " . $mes;
+                                        ?>
+                                        <br>
+                                        <?php
+                                            $dia = date('j', strtotime($dateExit));
+                                            $mes = $mesosCatala[date('n', strtotime($dateExit))];
+
+                                            echo $dia . " " . $mes;
+                                        ?>
                                     </p>
                                 </div>
 
@@ -219,8 +299,7 @@
                                         </div>
                                     </ul>
                                     <p class="right-aligned-content">
-                                        2 Adults
-                                        3 Nens
+                                        <?= $people ?> viatjers
                                     </p>
                                 </div>
                             </div>
@@ -234,7 +313,7 @@
                                             <p>Preu per nit</p>
                                         </div>
                                     </ul>    
-                                    <p class="right-aligned-content number">€ 195</p>
+                                    <p class="right-aligned-content number">€ <?= $pricePeakSeason ?></p>
                                 </div>
 
                                 <div class="nights">
@@ -243,7 +322,24 @@
                                             <p>Número de nits</p>
                                         </div>
                                     </ul>    
-                                    <p class="right-aligned-content number">3</p>
+                                    <p class="right-aligned-content number">
+                                        <?php
+                                            // Canvia el format per mostrar-les
+                                            $dateEntryFormatted = date('d/m/Y', strtotime($dateEntry));
+                                            $dateExitFormatted = date('d/m/Y', strtotime($dateExit));
+
+                                            // Les dues dates que vols comparar
+                                            $data1 = new DateTime($dateEntry);
+                                            $data2 = new DateTime($dateExit);
+
+                                            // Calcula la diferencia en dies entre les dues dates
+                                            $diferencia = $data1->diff($data2);
+
+                                            $nombreNits = $diferencia->days;
+
+                                            echo $nombreNits;
+                                        ?>
+                                    </p>
                                 </div>
 
                                 <div class="total">
@@ -252,7 +348,15 @@
                                             <p>Total</p>
                                         </div>
                                     </ul>
-                                    <p class="right-aligned-content number">€ 585</p>
+                                    <p class="right-aligned-content number">
+                                        € 
+                                        <?php
+                                            $total = $pricePeakSeason * $nombreNits;
+                                            
+                                            // Afegeix .00
+                                            echo number_format($total, 2);
+                                        ?>
+                                    </p>
                                 </div>
 
                             </div>

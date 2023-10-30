@@ -1,5 +1,9 @@
+var mapElement = document.getElementById('map');
+var latitude = mapElement.getAttribute('data-latitude');
+var longitude = mapElement.getAttribute('data-longitude');
+
 var map = L.map('map', {
-    center: [42.27370307120102, 2.964626881265565],
+    center: [latitude, longitude],
     zoom: 17
 });
  
@@ -19,7 +23,7 @@ var redIcon = new L.Icon ( {
 });
   
 L.marker (
-    [42.27370307120102, 2.964626881265565], 
+    [latitude, longitude], 
     {
         icon: redIcon
     }

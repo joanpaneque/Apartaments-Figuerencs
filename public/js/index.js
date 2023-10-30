@@ -16,8 +16,8 @@ $.datepicker.regional["ca"] = {
 $.datepicker.setDefaults($.datepicker.regional['ca']);
 
 // Instances of the datepicker widgets with the proper configuration
-$("#date-entry").datepicker({ minDate: 0, maxDate: "+1M" });
-$("#date-exit").datepicker({ minDate: 0, maxDate: "+1M" });
+$("#date-entry").datepicker({ minDate: 0 });
+$("#date-exit").datepicker({ minDate: 0 });
 
 // Set date entry value to today
 $("#date-entry").val(currentDate());
@@ -158,18 +158,31 @@ dateForm.on("change", e => {
     $("#date-form input").each((index, element) => {
         entries[element.name] = element.value;
     });
+
+    console.log(entries);
+
+    entries["date-entry"] = DDMMYYYYToYYYYMMDD(entries["date-entry"]);
+    entries["date-exit"] = DDMMYYYYToYYYYMMDD(entries["date-exit"]);
+
     console.log(entries);
     updateApartments(entries);
 });
 
-function YYYYMMDD(date) {
-    return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+
+function DDMMYYYYToYYYYMMDD(DDMMYYYY) {
+    return DDMMYYYY.split("/").reverse().join("-");
+}
+
+
+function DDMMYYYY(date) {
+    return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+
 }
 
 function currentDate(plusDays = 0) {
     const date = new Date();
     date.setDate(date.getDate() + plusDays);
-    return YYYYMMDD(date);
+    return DDMMYYYY(date);
 }
 
 updateApartments({ "date-entry": currentDate(), "date-exit": currentDate(1), "people": 1 });
@@ -200,7 +213,7 @@ function updateApartments(entries) {
                             <div class="apartment-line">
                                 <div class="apartment-rooms">${apartment.rooms} habitacions</div>
                             </div>
-                            <div class="apartment-price">${apartment.price_peak_season}€</div>
+                            <div class="apartment-price">€ ${apartment.price_peak_season}</div>
                         </div>
                     </article>
                 `);
