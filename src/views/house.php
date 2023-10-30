@@ -63,9 +63,10 @@
                                     </div>
                                 </ul>
                                 <p class="right-aligned-content">
-                                    18 Oct
+                                    <?= $dateEntry ?>
                                     <br>
-                                    20 Oct
+                                    <?= $dateExit ?>
+
                                 </p>
                             </div>
 
@@ -76,9 +77,8 @@
                                     </div>
                                 </ul>
                                <p class="right-aligned-content">
-                                    2 Adults
-                                    <br>
-                                    3 Nens
+                                    <?= $people ?> viatjers
+            
                                 </p>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
 
 
                 <div class="paragraph">
-                    <h1>El Far</h1>
+                    <h1><?= $shortDescription ?> </h1>
                     <h5>Figueres, Catalunya</h5>
                     <h5 class="postal">17600</h5>
                     <h6>5 dormitoris | 3 banys</h6>

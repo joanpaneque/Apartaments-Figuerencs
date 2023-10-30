@@ -22,11 +22,8 @@ function ctrlApartments($request, $response, $container) {
         $people = 0;
     }
 
-    // $response->set("dateEntry", $dateEntry);
-    // $response->set("dateExit", $dateExit);
-    // $response->set("people", $people);
 
-    $apartments = $container->apartments()->get($dateEntry, $dateExit, $people);
+    $apartments = $container->apartments()->getAll($dateEntry, $dateExit, $people);
 
     $response->set("apartments", $apartments);
 

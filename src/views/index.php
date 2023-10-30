@@ -33,7 +33,7 @@
                     </div>
                     <div class="date-container people">
                         <label for="people">Viatjers</label>
-                        <input name="people" type="text" id="people" value="0" class="nav-input">
+                        <input name="people" type="text" id="people" value="1" class="nav-input">
                     </div>
                 </div>
             </form>

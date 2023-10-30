@@ -35,7 +35,7 @@ const travelers = new FloatingWindow($("#people"));
 // All traveler types are treated the same way, but make three if we want
 // to change the behavior of one of them in the future
 const travelerTypes = [
-    { name: "Adults", description: "13 anys o més", adult: true, },
+    { name: "Adults", description: "13 anys o més", adult: true, default: 1 },
     { name: "Nens", description: "De 2 a 12 anys", canGoAlone: false },
     { name: "Nadons", description: "Menys de 2 anys", canGoAlone: false }
 ];
@@ -50,7 +50,7 @@ travelers.setContent(travelerTypes.map(travelerType => `
             <div class="traveler-remove disabled">
                 <img src="/assets/svg/minus-small.svg" alt="restar" >
             </div>
-            <div class="traveler-number">0</div>
+            <div class="traveler-number">${travelerType.default ?? 0}</div>
             <div class="traveler-add ${travelerType.canGoAlone || travelerType.adult ? "" : "disabled"}">
                 <img src="/assets/svg/plus-small.svg" alt="sumar">
             </div>
@@ -58,8 +58,8 @@ travelers.setContent(travelerTypes.map(travelerType => `
     </div>
 `));
 
-var totalTravelers = 0;
-var totalAdults = 0;
+var totalTravelers = 1;
+var totalAdults = 1;
 var totalChildren = 0;
 
 travelers.event("click", ".traveler-add", e => {
@@ -95,6 +95,10 @@ travelers.event("click", ".traveler-add", e => {
     if (totalAdults > 0) {
         // We remove the disabled class from the children add button
         travelers.$(".traveler-type .traveler-add").removeClass("disabled");
+    }
+
+    if (totalAdults == 1) {
+        travelers.$(".traveler-type[data-adult] .traveler-remove").addClass("disabled");
     }
 });
 
@@ -141,6 +145,10 @@ travelers.event("click", ".traveler-remove", e => {
             });
         }
     }
+
+    if (totalAdults == 1) {
+        travelers.$(".traveler-type[data-adult] .traveler-remove").addClass("disabled");
+    }
 });
 
 const dateForm = $("#date-form");
@@ -150,6 +158,7 @@ dateForm.on("change", e => {
     $("#date-form input").each((index, element) => {
         entries[element.name] = element.value;
     });
+    console.log(entries);
     updateApartments(entries);
 });
 
@@ -163,7 +172,7 @@ function currentDate(plusDays = 0) {
     return YYYYMMDD(date);
 }
 
-updateApartments({ "date-entry": currentDate(), "date-exit": currentDate(1) });
+updateApartments({ "date-entry": currentDate(), "date-exit": currentDate(1), "people": 1 });
 
 function updateApartments(entries) {
     $.ajax({
@@ -175,7 +184,6 @@ function updateApartments(entries) {
                 console.error(data.error);
                 return;
             }
-            console.log(data);
             const apartments = JSON.parse(data);
             $("#apartments").empty();
             apartments.apartments.forEach(apartment => {
@@ -198,7 +206,7 @@ function updateApartments(entries) {
                 `);
 
                 apartmentElement.on("click", e => {
-                    window.location.href = `?r=house&id=${apartment.code}`;
+                    window.location.href = `?r=house&id=${apartment.code}&date-entry=${entries["date-entry"]}&date-exit=${entries["date-exit"]}&people=${entries["people"]}`;
                 });
 
                 // Test
