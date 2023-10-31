@@ -2,6 +2,9 @@
     // Configuration
     include "../src/config.php";
 
+    // Middleware
+    include "../src/middleware/middleIsLogged.php";
+
     // Models
     include "../src/models/connection.php";
     include "../src/models/apartments.php"; 
@@ -28,7 +31,7 @@
     $r = $_REQUEST["r"] ?? "";
 
     if ($r == "") {
-        ctrlIndex($request, $response, $container);
+        middleIsLogged($request, $response, $container, "ctrlIndex");
     } else if ($r == "apartments") {
         ctrlApartments($request, $response, $container);
     } else if ($r === "login") {
