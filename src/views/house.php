@@ -10,6 +10,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
         <link rel="stylesheet" href="/styles/house.css">
+        <link rel="stylesheet" href="/styles/global.css">
         <title>Casa</title>
     </head>
 
@@ -378,6 +379,12 @@
             </div>
 
         </div>
+        <!-- Boto per obrir el modal -->
+        <div class="position-fixed bottom-0 fix">
+            <p><strong>€149</strong> per nit</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalReserva">Reserva</button>
+        </div>
+
 
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

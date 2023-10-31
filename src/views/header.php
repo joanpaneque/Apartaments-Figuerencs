@@ -25,9 +25,8 @@
                     </div>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="?r=login">Login</a></li>
-                    <li><a class="dropdown-item" href="?r=register">Register</a></li>
                     <li><a class="dropdown-item" href="?r=register">Gestor</a></li>
+                    <li><a class="dropdown-item" href="?r=logout">Tancar sessió</a></li>
                 </ul>
             </div>
 
