@@ -4,10 +4,16 @@
         $dateEntry = $request->get(INPUT_GET, "date-entry");
         $dateExit = $request->get(INPUT_GET, "date-exit");
         $people = $request->get(INPUT_GET, "people");
+        
+        if (isDDMMYYYYdate($dateEntry)) {
+            $dateEntry = convertDDMMYYYYtoYYYYMMDD($dateEntry);
+        };
 
+        if (isDDMMYYYYdate($dateExit)) {
+            $dateExit = convertDDMMYYYYtoYYYYMMDD($dateExit);
+        };
 
         $isAvailable = $container->apartments()->isAvailable($id, $dateEntry, $dateExit, $people);
-
 
         if ($isAvailable) {
             $apartament = $container->apartments()->get($id);
@@ -23,8 +29,7 @@
             $response->set("longitude", $apartament["longitude"]);
             $response->set("latitude", $apartament["latitude"]);
 
-            $services = explode(",", $apartament["services"]);
-            // Now, $services should be an array
+            $services = explode(",", $apartament["services"] ?? "");
             $response->set("services", $services);
             
 

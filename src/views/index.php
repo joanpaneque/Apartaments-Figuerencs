@@ -42,12 +42,7 @@
             </div>
         </nav>
         <div id="apartments" class="apartments row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 g-lg-4">
-    <!-- Contenido de las columnas -->
-</div>
-
-
-
-
+        </div>
     </div>
 </body>
 </html>

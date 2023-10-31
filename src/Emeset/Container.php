@@ -44,4 +44,7 @@ class Container {
         return new \Daw\Apartments($this->sql);
     }
 
+    public function user() {
+        return new \Daw\Users($this->sql);
+    }
 }
