@@ -25,7 +25,7 @@
             <div class="info">
 
                 <div class="image">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="9999999">
                         <div class="carousel-indicators">
                             <?php 
                                 foreach ($images as $i => $image) { ?>
@@ -128,7 +128,7 @@
                                         <p>Preu per nit</p>
                                     </div>
                                 </ul>    
-                                <p class="right-aligned-content number">€ <?= $pricePeakSeason ?></p>
+                                <p class="right-aligned-content number"><?= $pricePeakSeason ?>€</p>
                             </div>
                             <div class="nights">
                                 <ul>
@@ -164,13 +164,12 @@
                                     </div>
                                 </ul>
                                 <p class="right-aligned-content number">
-                                    € 
                                     <?php
                                         $total = $pricePeakSeason * $nombreNits;
                                         
                                         // Add .00 at the final
                                         echo number_format($total, 2);
-                                    ?>
+                                    ?>€
                                 </p>
                             </div>
 
@@ -249,13 +248,6 @@
 
                 <p>Hora d'arribada: entre les <b><?= $entryTime ?></b> i les <b>20:00</b></p>
                 <p>Hora de sortida: abans de les <b>12:00</b></p>
-            </div>
-
-
-            <!-- Boto per obrir el modal -->
-            <div class="position-fixed bottom-0 fix">
-                <p><b>€149</b> per nit</p>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalReserva">Reserva</button>
             </div>
 
             <!-- Modal de pantalla completa -->
@@ -377,6 +369,17 @@
                 </div>
             </div>
 
+        </div>
+
+        <!-- Boto per obrir el modal -->
+        <div class="position-fixed bottom-0 fix">
+            <p><b>
+                <?php
+                    $total = $pricePeakSeason * $nombreNits;
+                    // Add .00 at the final
+                    echo number_format($total, 2);
+                ?>€</b> per nit</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalReserva">Reserva</button>
         </div>
 
 
