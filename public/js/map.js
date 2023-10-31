@@ -1,6 +1,6 @@
-var mapElement = document.getElementById('map');
-var latitude = mapElement.getAttribute('data-latitude');
-var longitude = mapElement.getAttribute('data-longitude');
+var mapElement = document.getElementById("map");
+var latitude = mapElement.getAttribute("data-latitude");
+var longitude = mapElement.getAttribute("data-longitude");
 
 var map = L.map('map', {
     center: [latitude, longitude],
