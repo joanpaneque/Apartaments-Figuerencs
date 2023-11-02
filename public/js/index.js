@@ -203,11 +203,11 @@ function updateApartments(entries) {
                 const apartmentElement = $(`
                     <article class="apartment">
                         <div class="apartment-image">
-                            <img class="" src="${apartment.images[0]}" alt="Imatge del apartament '${apartment.short_description}'">
+                            <img class="" src="${apartment.images[0]}" alt="Imatge del apartament '${apartment.title}'">
                         </div>
                         <div class="apartment-info">
                             <div class="apartment-line">
-                                <div class="apartment-description">${apartment.short_description}</div>
+                                <div class="apartment-description">${apartment.title}</div>
                                 <div class="apartment-stars"><img src="assets/svg/star.svg" alt="Icona d'estrella">5,0</div>
                             </div>
                             <div class="apartment-line">

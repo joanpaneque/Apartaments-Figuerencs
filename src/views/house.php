@@ -27,21 +27,31 @@
 
                 <div class="image">
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" data-bs-interval="9999999">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="../assets/img/exterior.jpg" class="d-block" alt="Exterior">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../assets/img/interior.jpg" class="d-block" alt="Interior">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../assets/img/pool.jpg" class="d-block" alt="Piscina">
-                            </div>
+                            <?php foreach ($images as $index => $image) { ?>
+                                <div class="carousel-item 
+                                    <?php
+                                        if ($index === 0) {
+                                            echo 'active';
+                                        } else {
+                                            echo '';
+                                        }
+                                    ?>">
+                                    <img src="<?= $image ?>" class="d-block w-100" alt="Imatge <?= $index ?>">
+                                </div>
+                            <?php }; ?>
+                        </div>
+                        <div class="carousel-indicators">
+                            <?php 
+                                foreach ($images as $index => $image) { ?>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $index ?>" 
+                                    <?php 
+                                        if ($index === 0) {
+                                            echo 'class="active"'; 
+                                        }
+                                    ?> 
+                                    aria-label="Slide <?= $index + 1 ?>"></button>
+                            <?php } ?>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -235,7 +245,7 @@
             <div class="rules">
                 <h4>Normes de la casa</h4>
 
-                <p>Hora d'arribada: entre les 16:00 i les 21:00</p>
+                <p>Hora d'arribada: entre les <?= $entryTime ?> i les 21:00</p>
                 <p>Sortir abans de les 12:00</p>
             </div>
 
@@ -342,13 +352,13 @@
                                         </div>
                                     </ul>
                                     <p class="right-aligned-content number">
-                                        € 
                                         <?php
                                             $total = $pricePeakSeason * $nombreNits;
                                             
                                             // Afegeix .00
                                             echo number_format($total, 2);
                                         ?>
+                                        €
                                     </p>
                                 </div>
 
@@ -363,12 +373,6 @@
             </div>
 
         </div>
-                    <!-- Boto per obrir el modal -->
-                    <div class="position-fixed bottom-0 fix">
-                <p><strong>€149</strong> per nit</p>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalReserva">Reserva</button>
-            </div>
-
 
         <!-- Boto per obrir el modal -->
         <div class="position-fixed bottom-0 fix">

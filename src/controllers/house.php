@@ -17,6 +17,10 @@
 
         if ($isAvailable) {
             $apartament = $container->apartments()->get($id);
+
+            $apartmentData = $container->apartments()->get($id);
+
+
             $response->set("dateEntry", $dateEntry);
             $response->set("dateExit", $dateExit);
             $response->set("people", $people);
@@ -28,9 +32,13 @@
             $response->set("pricePeakSeason", $apartament["price_peak_season"]);
             $response->set("longitude", $apartament["longitude"]);
             $response->set("latitude", $apartament["latitude"]);
+            $response->set("entryTime", $apartament["entry_time"]);
 
             $services = explode(",", $apartament["services"] ?? "");
             $response->set("services", $services);
+
+
+            $response->set("images", $apartmentData["images"]);
             
 
             $response->setTemplate("house.php");
