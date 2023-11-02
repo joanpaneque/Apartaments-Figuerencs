@@ -20,23 +20,23 @@
 
         <!-- CONAINER -->
         <div class="container">
-            <form class="row g-3" method="post">
-                <div class="col-md-12">
+            <form method="post">
+                <div class="mb-3 col-4">
                     <label for="card" class="form-label">Número de la tarjeta</label>
                     <input type="text" inputmode="numeric" maxlength="24" class="form-control" id="cardInput" required>
                 </div>
 
-                <div class="col-md-12">
+                <div class="mb-3 col-4">
                     <label for="name" class="form-label">Nom del titular</label>
                     <input type="text" class="form-control" id="inputPassword" required>
                 </div>
 
-                <div class="col-md-2">
+                <div class="mb-2 col-2">
                     <label for="mes_i_any" class="form-label">Data caducitat:</label>
                     <input type="text" class="form-control" id="mes_i_any" name="mes_i_any" pattern="(0[1-9]|1[0-2])/\d{4}" maxlength="7" placeholder="MM/YYYY" required>
                 </div>
 
-                <div class="col-md-2">
+                <div class="mb-2 col-2">
                     <label for="cvv" class="form-label">CVV</label>
                     <input type="text" class="form-control" maxlength="3" placeholder="CVC">
                 </div>
