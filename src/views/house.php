@@ -10,6 +10,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
         <link rel="stylesheet" href="/styles/house.css">
+        <link rel="stylesheet" href="/styles/global.css">
         <title>Casa</title>
     </head>
 
@@ -25,34 +26,22 @@
             <div class="info">
 
                 <div class="image">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="9999999">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" data-bs-interval="9999999">
                         <div class="carousel-indicators">
-                            <?php 
-                                foreach ($images as $i => $image) { ?>
-                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $i ?>" 
-                                    <?php 
-                                        if ($i === 0) {
-                                            echo 'class="active"'; 
-                                        }
-                                    ?>
-                                    aria-label="Slide <?= $i + 1 ?>"></button>
-                            <?php } ?>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
                         <div class="carousel-inner">
-                            <?php 
-                                foreach ($images as $i => $image) { ?>
-                                    <div
-                                        class="carousel-item 
-                                        <?php
-                                            if ($i === 0) {
-                                                echo "active";
-                                            } else {
-                                                echo "";
-                                            }
-                                        ?>">
-                                        <img src="<?= $image ?>" class="d-block w-100" alt="Imatge <?= $i ?>">
-                                    </div>
-                            <?php } ?>
+                            <div class="carousel-item active">
+                                <img src="../assets/img/exterior.jpg" class="d-block" alt="Exterior">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/img/interior.jpg" class="d-block" alt="Interior">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/img/pool.jpg" class="d-block" alt="Piscina">
+                            </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -139,15 +128,15 @@
                                 <p class="right-aligned-content number">
                                     <?php
 
-                                        // Change the format
+                                        // Canvia el format per mostrar-les
                                         $dateEntryFormatted = date('d/m/Y', strtotime($dateEntry));
                                         $dateExitFormatted = date('d/m/Y', strtotime($dateExit));
 
-                                        // The two dates you want to compare
+                                        // Les dues dates que vols comparar
                                         $data1 = new DateTime($dateEntry);
                                         $data2 = new DateTime($dateExit);
 
-                                        // Calculate the difference in days between the two dates
+                                        // Calcula la diferencia en dies entre les dues dates
                                         $diferencia = $data1->diff($data2);
 
                                         $nombreNits = $diferencia->days;
@@ -167,7 +156,7 @@
                                     <?php
                                         $total = $pricePeakSeason * $nombreNits;
                                         
-                                        // Add .00 at the final
+                                        // Afegeix .00
                                         echo number_format($total, 2);
                                     ?>€
                                 </p>
@@ -222,10 +211,10 @@
                 <h4>Que ofereix?</h4>
                 <ul>
                     <?php
-                        // Combine items with line breaks
+                        // Combina els elements amb salts de linia
                         $servicesList = implode("\n", $services);
-                        // Generate a single list with items
-                        echo "<li>" . str_replace("\n", "</li><li>", $servicesList) . "</li>";
+                        // Genera una unica llista amb els elements
+                        echo '<li>' . str_replace("\n", '</li><li>', $servicesList) . '</li>';
 
                         // we don't do a foreach because the bbdd is set up in a way that a list wouldn't be made, that's why I do the implode
                         // we don't use nl2br like the description because then we lose the dots of the list
@@ -246,8 +235,8 @@
             <div class="rules">
                 <h4>Normes de la casa</h4>
 
-                <p>Hora d'arribada: entre les <b><?= $entryTime ?></b> i les <b>20:00</b></p>
-                <p>Hora de sortida: abans de les <b>12:00</b></p>
+                <p>Hora d'arribada: entre les 16:00 i les 21:00</p>
+                <p>Sortir abans de les 12:00</p>
             </div>
 
             <!-- Modal de pantalla completa -->
@@ -328,12 +317,15 @@
                                     </ul>    
                                     <p class="right-aligned-content number">
                                         <?php
+                                            // Canvia el format per mostrar-les
                                             $dateEntryFormatted = date('d/m/Y', strtotime($dateEntry));
                                             $dateExitFormatted = date('d/m/Y', strtotime($dateExit));
 
+                                            // Les dues dates que vols comparar
                                             $data1 = new DateTime($dateEntry);
                                             $data2 = new DateTime($dateExit);
 
+                                            // Calcula la diferencia en dies entre les dues dates
                                             $diferencia = $data1->diff($data2);
 
                                             $nombreNits = $diferencia->days;
@@ -353,7 +345,8 @@
                                         € 
                                         <?php
                                             $total = $pricePeakSeason * $nombreNits;
-
+                                            
+                                            // Afegeix .00
                                             echo number_format($total, 2);
                                         ?>
                                     </p>
@@ -370,6 +363,12 @@
             </div>
 
         </div>
+                    <!-- Boto per obrir el modal -->
+                    <div class="position-fixed bottom-0 fix">
+                <p><strong>€149</strong> per nit</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalReserva">Reserva</button>
+            </div>
+
 
         <!-- Boto per obrir el modal -->
         <div class="position-fixed bottom-0 fix">

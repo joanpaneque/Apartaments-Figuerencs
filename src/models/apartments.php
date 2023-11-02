@@ -7,7 +7,23 @@ class Apartments {
 
     public function __construct($sql) {
         $this->sql = $sql;
-    }    
+    }
+
+    public function getImage($id) {
+        $query = "
+        SELECT i.url
+        FROM images i
+        WHERE i.apartment_code = :id
+        ";
+    
+        $stmt = $this->sql->prepare($query);
+        $stmt->bindValue(":id", $id);
+        $stmt->execute();
+        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    
+        return $result;
+    }
+    
 
     public function get($id) {
         $query = "

@@ -2,18 +2,11 @@
     // Configuration
     include "../src/config.php";
 
-    // Models
-    include "../src/models/connection.php";
-    include "../src/models/apartments.php"; 
+    // Functions
+    include "../src/functions/dates.php";
 
-    // Emeset library
-    include "../src/Emeset/Container.php";
-    include "../src/Emeset/Request.php";
-    include "../src/Emeset/Response.php";
-
-    $request = new \Emeset\Request();
-    $response = new \Emeset\Response();
-    $container = new \Emeset\Container($config);
+    // Middleware
+    include "../src/middleware/middleIsLogged.php";
 
     // Controllers
     include "../src/controllers/login.php";
@@ -24,11 +17,28 @@
     include "../src/controllers/apartments.php";
     include "../src/controllers/house.php";
     include "../src/controllers/tpv.php";
+    include "../src/controllers/logout.php";
+
+    // Models
+    include "../src/models/connection.php";
+    include "../src/models/apartments.php"; 
+    include "../src/models/users.php";
+
+    // Emeset library
+    include "../src/Emeset/Container.php";
+    include "../src/Emeset/Request.php";
+    include "../src/Emeset/Response.php";
+
+    $request = new \Emeset\Request();
+    $response = new \Emeset\Response();
+    $container = new \Emeset\Container($config);
+
+
     
     $r = $_REQUEST["r"] ?? "";
 
     if ($r == "") {
-        ctrlIndex($request, $response, $container);
+        middleIsLogged($request, $response, $container, "ctrlIndex");
     } else if ($r == "apartments") {
         ctrlApartments($request, $response, $container);
     } else if ($r === "login") {
@@ -43,6 +53,8 @@
         ctrlHouse($request, $response, $container);
     } elseif ($r === "tpv") {
         ctrlTpv($request, $response, $container);
+    } else if ($r === "logout") {
+        ctrlLogout($request, $response, $container);
     } else {
         echo "404";
     } 

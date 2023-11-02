@@ -13,25 +13,16 @@
     <body>
         <div class="main-container">
             <img src="../assets/img/pool.jpg" class="background-img" alt="Outside Pool">
-
             <div class="login-container">
                 <h1>Login</h1>
-
-                <form action="">
-                    <label for="mail">
-                        <h5>Correu:</h5>
-                        <input type="text" name="mail" class="text-input" required>
-                    </label>
-                    
-                    <label for="password">
-                        <h5>Contrasenya:</h5>
-                        <input type="text" name="password" class="text-input" required>
-                    </label>
-
+                <form>
+                    <input type="hidden" name="r" value="login">
+                    <label for="mail">Correu</label>
+                    <input type="text" name="email" class="text-input" required>
+                    <label for="password">Contrasenya</label>
+                    <input type="text" name="password" class="text-input" required>
                     <button>Enviar</button>
-
                 </form>
-
                 <a href="?r=register">No tens compte?</a>
             </div>
         </div>
