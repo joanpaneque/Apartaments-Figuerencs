@@ -31,6 +31,12 @@ label:first-child {
     margin-bottom: 30px;
 }
 
+label {
+    margin-left: 32px;
+    margin-top: 20px;
+    margin-bottom: 4px;
+}
+
 .login-container h1 {
     font-weight: bold;
     text-align: center;
@@ -71,16 +77,15 @@ label:first-child {
     margin-top: 35px;
 }
 
-input, button {
+input,
+button {
     border: none;
 }
 
 
 
 /* ########### TABLET */
-@media screen and (min-width: 480px) {
-
-}
+@media screen and (min-width: 480px) {}
 
 
 
