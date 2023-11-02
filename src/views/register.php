@@ -19,29 +19,31 @@
                 <h1>Registre't</h1>
 
                 <form action="">
+                    <input type="hidden" name="dologin" value="1">
+                    <input type="hidden" name="r" value="register">
                     <label for="name">
                         <h5>Nom:</h5>
-                        <input type="text" name="mail" class="text-input" required>
+                        <input type="text" name="name" class="text-input" required>
                     </label>
 
                     <label for="surname">
                         <h5>Cognoms:</h5>
-                        <input type="text" name="password" class="text-input" required>
+                        <input type="text" name="surname" class="text-input" required>
                     </label>
                     
                     <label for="mobile">
                         <h5>Telefon:</h5>
-                        <input type="text" name="password" class="text-input" required>
+                        <input type="text" name="phone" class="text-input" required>
                     </label>
 
                     <label for="mail">
                         <h5>Correu:</h5>
-                        <input type="text" name="password" class="text-input" required>
+                        <input type="text" name="email" class="text-input" required>
                     </label>
                     
                     <label for="password">
                         <h5>Contrasenya:</h5>
-                        <input type="text" name="password" class="text-input" required>
+                        <input type="password" name="password" class="text-input" required>
                     </label>
                     
                     <button>Enviar</button>
