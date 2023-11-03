@@ -13,11 +13,13 @@
         } else if (!isset($email) && isset($password)) {
             $errorMessage = "El email no pot estar buit";
         } else {
-            $user = $container->user()->login($email, $password);
+            $userid = $container->user()->login($email, $password);
             
-            if ($user) {
-                $response->setSession("user", $user);
+            if ($userid) {
+                $permissions = $container->user()->getPermissions($userid);
                 $response->setSession("logged", true);
+                $response->setSession("userid", $userid);
+                $response->setSession("permissions", $permissions);
                 $response->redirect("location: index.php");
             } else {
                 $errorMessage = "El email o la contrasenya no són correctes";

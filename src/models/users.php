@@ -8,17 +8,34 @@ class Users {
     public function __construct($sql) {
         $this->sql = $sql;
     }
-
+    
     public function login($email, $password) {
         $stm = $this->sql->prepare('SELECT * FROM users WHERE email = :email');
         $stm->bindValue(':email', $email);
         $stm->execute();
         $user = $stm->fetch(\PDO::FETCH_ASSOC);
         if ($user && $user['password'] == $password) {
-            return $user;
+            return $user["code"];
         } else {
             return false;
         }
+    }
+
+    public function getData($userid) {
+        $stm = $this->sql->prepare('SELECT * FROM users WHERE code = :code');
+        $stm->bindValue(':code', $userid);
+        $stm->execute();
+        $user = $stm->fetch(\PDO::FETCH_ASSOC);
+        return $user;
+    }
+
+    public function getPermissions($userid) {
+        $user = $this->getData($userid);
+        $stm = $this->sql->prepare('SELECT * FROM permissions JOIN roles_permissions ON permissions.code = roles_permissions.permission_code WHERE roles_permissions.role_code = :role_code');
+        $stm->bindValue(':role_code', $user['role_code']);
+        $stm->execute();
+        $permissions = $stm->fetchAll(\PDO::FETCH_ASSOC);
+        return $permissions;
     }
 
     public function register($name, $surname, $email, $phone, $password) {

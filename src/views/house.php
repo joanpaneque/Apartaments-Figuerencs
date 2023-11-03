@@ -18,10 +18,7 @@
 
         <?php require 'header.php' ?>
 
-
-
         <div class="container">
-
             <!-- CONTAINER INFO -->
             <div class="info">
 
