@@ -34,8 +34,8 @@
     $container = new \Emeset\Container($config);
 
     // Global variables
-    $response->set("user", @$request->get("SESSION", "user"));
-    $response->set("permissions", @$request->get("SESSION", "permissions"));
+    $response->set("userid", $request->get("SESSION", "user"));
+    $response->set("permissions", $request->get("SESSION", "permissions"));
     
     $r = $_REQUEST["r"] ?? "";
 
