@@ -24,20 +24,21 @@
                 <div class="user">
                     Benvingut,
                     <br>
-                    Paneque, <b>Joan</b>
+                    <?= $user["surname"] ?>, <b><?= $user["name"] ?></b>
                 </div>
 
                 <br>
 
                 <div class="form">
-                    <form action="">
+                    <form action="index.php" method="POST">
+                        <input type="hidden" name="r" value="updateUser">
                         <div class="mb-3 col-3">
                             <div class="title">
                                 Nom:
                             </div>
 
                             <div class="info">
-                                <input type="text" value="Joan" class="image-input">
+                                <input type="text" name="name" value="<?= $user["name"] ?>" class="image-input">
                             </div>
                         </div>
 
@@ -47,17 +48,7 @@
                             </div>
 
                             <div class="info">
-                                <input type="text" value="Paneque" class="image-input">
-                            </div>
-                        </div>
-
-                        <div class="mb-3 col-3">
-                            <div class="title">
-                                Correu:
-                            </div>
-
-                            <div class="info">
-                                <input type="email" value="joanpaneque@cendrassos.net" class="image-input">
+                                <input type="text" name="surname" value="<?= $user["surname"] ?>" class="image-input">
                             </div>
                         </div>
 
@@ -67,12 +58,21 @@
                             </div>
 
                             <div class="info">
-                                <input type="tel" value="123456789" class="image-input">
+                                <input type="phone" name="phone" value="<?= $user["phone"] ?>" class="image-input">
                             </div>
-
                         </div>
 
-                        <button type="button" class="btn btn-primary">Actualitzar</button>
+                        <div class="mb-3 col-3">
+                            <div class="title">
+                                Correu:
+                            </div>
+
+                            <div class="info">
+                                <input type="email" name="email" value="<?= $user["email"] ?>">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Actualitzar</button>
                     </form>
                 </div>
 

@@ -18,6 +18,7 @@
     include "../src/controllers/house.php";
     include "../src/controllers/tpv.php";
     include "../src/controllers/logout.php";
+    include "../src/controllers/updateUser.php";
 
     // Models
     include "../src/models/connection.php";
@@ -33,7 +34,9 @@
     $response = new \Emeset\Response();
     $container = new \Emeset\Container($config);
 
-
+    // Global variables
+    $response->set("user", @$request->get("SESSION", "user"));
+    $response->set("permissions", @$request->get("SESSION", "permissions"));
     
     $r = $_REQUEST["r"] ?? "";
 
@@ -55,6 +58,8 @@
         ctrlTpv($request, $response, $container);
     } else if ($r === "logout") {
         ctrlLogout($request, $response, $container);
+    } else if ($r === "updateUser") {
+        ctrlUpdateUser($request, $response, $container);
     } else {
         echo "404";
     } 

@@ -34,8 +34,8 @@
             $response->set("latitude", $apartament["latitude"]);
             $response->set("entryTime", $apartament["entry_time"]);
 
-            $services = explode(",", $apartament["services"] ?? "");
-            $response->set("services", $services);
+            $services = explode(",", $apartament["services"]);
+            $response->set("services", $services ?? "");
 
 
             $response->set("images", $apartmentData["images"]);
