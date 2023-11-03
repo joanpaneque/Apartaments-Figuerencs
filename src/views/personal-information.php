@@ -37,8 +37,7 @@
                             </div>
 
                             <div class="info">
-                                <input type="text" value="Joan">
-                                <img src="../assets/svg/pencil.svg" alt="Editar">
+                                <input type="text" value="Joan" class="image-input">
                             </div>
                         </div>
 
@@ -48,8 +47,7 @@
                             </div>
 
                             <div class="info">
-                                <input type="text" value="Paneque">
-                                <img src="../assets/svg/pencil.svg" alt="Editar">
+                                <input type="text" value="Paneque" class="image-input">
                             </div>
                         </div>
 
@@ -59,8 +57,7 @@
                             </div>
 
                             <div class="info">
-                                <input type="email" value="joanpaneque@cendrassos.net">
-                                <img src="../assets/svg/pencil.svg" alt="Editar">
+                                <input type="email" value="joanpaneque@cendrassos.net" class="image-input">
                             </div>
                         </div>
 
@@ -70,10 +67,12 @@
                             </div>
 
                             <div class="info">
-                                <input type="tel" value="123456789">
-                                <img src="../assets/svg/pencil.svg" alt="Editar" id="editButton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <input type="tel" value="123456789" class="image-input">
                             </div>
+
                         </div>
+
+                        <button type="button" class="btn btn-primary">Actualitzar</button>
                     </form>
                 </div>
 
