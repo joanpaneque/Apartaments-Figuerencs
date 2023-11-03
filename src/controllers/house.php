@@ -32,9 +32,8 @@
             $response->set("entryTime", $apartment["entry_time"]);
             $response->set("images", $apartment["images"]);
 
-
-            $services = explode(",", $apartment["services"] ?? "");
-            $response->set("services", $services);
+            $services = explode(",", $apartment["services"]);
+            $response->set("services", $services ?? "");
 
 
             

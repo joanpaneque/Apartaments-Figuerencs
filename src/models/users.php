@@ -53,6 +53,24 @@ class Users {
         }
     }
 
+    public function update($name, $surname, $phone, $email) {
+        $stm = $this->sql->prepare('UPDATE users SET name = :name, surname = :surname, phone = :phone WHERE email = :email;');
+        $stm->bindValue(':name', $name);
+        $stm->bindValue(':surname', $surname);
+        $stm->bindValue(':phone', $phone);
+        $stm->bindValue(':email', $email);
+
+        $stm->execute();
+        if ($stm->errorCode() == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    
+
+
     public function exists($email) {
         $stm = $this->sql->prepare('SELECT * FROM users WHERE email = :email');
         $stm->bindValue(':email', $email);

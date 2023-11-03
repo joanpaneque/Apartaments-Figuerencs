@@ -1,86 +1,52 @@
-body {
-    overflow-y: hidden;
-    max-height: fit-content;
-}
-
-
-/* ######### BG CONTAINER */
-.background-img {
-    opacity: 0.35;
-    position: fixed;
-    left: -700px;
-    transform: translateX(-50px);
-    height: 100vh;
-}
-
-
-/* ######### MAIN CONTAINER */
-.login-container {
+.center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #EBEBEB;
-    height: 426px;
-    width: 277px;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px #0000004d;
-}
-
-.login-container h1 {
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 40px;
 }
 
 
+/* ########### USER CONTAINER */
 .user {
-    display: block;
-    height: 22px;
-    margin-left: 20px;
-    margin-top: 4px;
-    float: left;
-}
-
-.name p {
-    font-size: 22px;
-    margin-left: 60px;
-}
-
-.name p:nth-child(2) {
-    margin-bottom: 3px;
+    font-size: 35px;
 }
 
 
-.reservations p {
-    font-size: 22px;
-    text-decoration: underline;
-    margin-left: 20px;
-    margin-top: 35px;
+/* ######### FORM CONTAINER */
+.form-control {
+    width: 300px;
 }
 
-.reservations a {
+
+
+/* ######### INFORMATION */
+.title {
+    font-weight: bold;
     font-size: 18px;
-    display: list-item;
-    text-decoration: none;
-    color: black;
-    margin-left: 80px;
+}
+
+.info {
+    width: 450px;
+    height: 35px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.info input {
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.image-input {
+    background-image: url(../assets/svg/pencil.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 20px;
 }
 
 
-
-
-
-/* ########### TABLET */
-@media screen and (min-width: 480px) {
-
-}
-
-
-
-/* ########### PC */
-@media screen and (min-width: 960px) {
-
+.btn {
+    width: 200px;
+    left: 50%;
+    transform: translate(70%);
 }

@@ -18,6 +18,7 @@
     include "../src/controllers/house.php";
     include "../src/controllers/tpv.php";
     include "../src/controllers/logout.php";
+    include "../src/controllers/updateUser.php";
 
     // Models
     include "../src/models/connection.php";
@@ -57,6 +58,8 @@
         ctrlTpv($request, $response, $container);
     } else if ($r === "logout") {
         ctrlLogout($request, $response, $container);
+    } else if ($r === "updateUser") {
+        ctrlUpdateUser($request, $response, $container);
     } else {
         echo "404";
     } 
