@@ -23,7 +23,7 @@ function ctrlApartments($request, $response, $container) {
     if (empty($people)) {
         $people = 0;
     }
-
+    
 
     $apartments = $container->apartments()->getAll($dateEntry, $dateExit, $people);
 
