@@ -20,7 +20,7 @@
                     <label for="mail">Correu</label>
                     <input type="text" name="email" class="text-input" required>
                     <label for="password">Contrasenya</label>
-                    <input type="text" name="password" class="text-input" required>
+                    <input type="password" name="password" class="text-input" required>
                     <button>Enviar</button>
                 </form>
                 <a href="?r=register">No tens compte?</a>
