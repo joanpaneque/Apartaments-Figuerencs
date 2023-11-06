@@ -24,7 +24,7 @@
                 <div class="user">
                     Benvingut,
                     <br>
-                    <?= $userid["surname"] ?>, <b><?= $userid["name"] ?></b>
+                    <?= $user["surname"] ?>, <b><?= $user["name"] ?></b>
                 </div>
 
                 <br>
@@ -38,7 +38,7 @@
                             </div>
 
                             <div class="info">
-                                <input type="text" name="name" value="<?= $userid["name"] ?>" class="image-input">
+                                <input type="text" name="name" value="<?= $user["name"] ?>" class="image-input">
                             </div>
                         </div>
 
@@ -48,7 +48,7 @@
                             </div>
 
                             <div class="info">
-                                <input type="text" name="surname" value="<?= $userid["surname"] ?>" class="image-input">
+                                <input type="text" name="surname" value="<?= $user["surname"] ?>" class="image-input">
                             </div>
                         </div>
 
@@ -58,7 +58,7 @@
                             </div>
 
                             <div class="info">
-                                <input type="phone" name="phone" value="<?= $userid["phone"] ?>" class="image-input">
+                                <input type="phone" name="phone" value="<?= $user["phone"] ?>" class="image-input">
                             </div>
                         </div>
 
@@ -68,7 +68,7 @@
                             </div>
 
                             <div class="info">
-                                <input type="email" name="email" value="<?= $userid["email"] ?>">
+                                <input type="email" name="email" value="<?= $user["email"] ?>">
                             </div>
                         </div>
 
