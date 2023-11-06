@@ -19,6 +19,7 @@
     include "../src/controllers/tpv.php";
     include "../src/controllers/logout.php";
     include "../src/controllers/updateUser.php";
+    include "../src/controllers/booking.php";
 
     // Models
     include "../src/models/connection.php";
@@ -34,9 +35,14 @@
     $response = new \Emeset\Response();
     $container = new \Emeset\Container($config);
 
+    // Controller variables
+    $userid = $request->get("SESSION", "userid");
+    
     // Global variables
-    $response->set("userid", $request->get("SESSION", "user"));
+    $response->set("userid", $userid);
     $response->set("permissions", $request->get("SESSION", "permissions"));
+
+    $container->setUserId($userid);
     
     $r = $_REQUEST["r"] ?? "";
 
@@ -60,6 +66,8 @@
         ctrlLogout($request, $response, $container);
     } else if ($r === "updateUser") {
         ctrlUpdateUser($request, $response, $container);
+    } else if ($r === "booking") {
+        ctrlBooking($request, $response, $container);
     } else {
         echo "404";
     } 
