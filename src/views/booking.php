@@ -22,7 +22,7 @@
             <?php print_r("") ?>
             <h1>Reserva feta</h1>
             <p>Has realitzat la teva reserva correctament a l'apartament "<?= $reservation["apartment"]["title"] ?>"</p>
-            <p>El teu codi de reserva és: <?= $reservation->reservation->code ?></p>
+            <p>El teu codi de reserva és: <?= $reservation["apartment"]["title"] ?></p>
         <?php } else { ?>
             <h1>Reserva no feta</h1>
         <?php } ?>
