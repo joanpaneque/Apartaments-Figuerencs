@@ -257,11 +257,11 @@
                         <div class="modal-body">
                             <div class="group">
                                 <div class="img">
-                                    <img src="../assets/img/exterior.jpg" alt="El Far">
+                                    <img src="<?= $images[0] ?>" alt="<?= $name ?>">
                                 </div>
                                 <div class="info-container">
                                     <div class="text-container">
-                                        <h1>El Far</h1>
+                                        <h1><?= $name ?></h1>
                                         <p>Figueres, Catalunya</p>
                                     </div>
                                 </div>
@@ -312,7 +312,7 @@
                                         <div class="text">
                                             <p>Preu per nit</p>
                                         </div>
-                                    </ul>    
+                                    </ul>
                                     <p class="right-aligned-content number">€ <?= $pricePeakSeason ?></p>
                                 </div>
 
