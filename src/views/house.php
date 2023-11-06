@@ -171,7 +171,7 @@
                         </div>
     
                         <div class="container-button">
-                            <a href="?r=tpv">
+                            <a href="?r=booking&date-entry=<?=$dateEntry?>&date-exit=<?=$dateExit?>&people=<?=$people?>&apartment-code=<?=$apartmentCode?>">
                                 <button type="button" class="btn btn-primary">Reserva</button>
                             </a>
                         </div>
