@@ -32,7 +32,7 @@
             $response->set("entryTime", $apartment["entry_time"]);
             $response->set("images", $apartment["images"]);
 
-            $services = explode(",", $apartment["services"]);
+            $services = explode(",", (string)$apartment["services"]);
             $response->set("services", $services ?? "");
 
 

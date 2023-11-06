@@ -168,9 +168,8 @@
                                     ?>€
                                 </p>
                             </div>
-
                         </div>
-                    
+    
                         <div class="container-button">
                             <a href="?r=tpv">
                                 <button type="button" class="btn btn-primary">Reserva</button>
