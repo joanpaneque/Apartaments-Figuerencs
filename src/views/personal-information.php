@@ -32,6 +32,17 @@
                 <div class="form">
                     <form action="index.php" method="POST">
                         <input type="hidden" name="r" value="updateUser">
+
+                        <div class="mb-3 col-3">
+                            <div class="title">
+                                Correu:
+                            </div>
+
+                            <div class="info">
+                                <input type="email" name="email" value="<?= $user["email"] ?>">
+                            </div>
+                        </div>
+
                         <div class="mb-3 col-3">
                             <div class="title">
                                 Nom:
@@ -62,15 +73,36 @@
                             </div>
                         </div>
 
-                        <div class="mb-3 col-3">
+                        <div class="mb-3 col-5">
                             <div class="title">
-                                Correu:
+                                Número tarjeta:
                             </div>
 
                             <div class="info">
-                                <input type="email" name="email" value="<?= $user["email"] ?>">
+                                <input type="text" name="card_number" value="<?= $user["card_number"] ?>" class="image-input">
                             </div>
                         </div>
+
+                        <div class="mb-3 col-5">
+                            <div class="title">
+                                CVC de la tarjeta:
+                            </div>
+
+                            <div class="info">
+                                <input type="text" name="cvc" value="<?= $user["cvc"] ?>" maxlength="3" class="image-input">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-5">
+                            <div class="title">
+                                Data de caducitat:
+                            </div>
+
+                            <div class="info">
+                                <input type="month" name="card_date" value="<?= $user["card_date"] ?>">
+                            </div>
+                        </div>
+
 
                         <button type="submit" class="btn btn-primary">Actualitzar</button>
                     </form>

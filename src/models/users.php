@@ -53,12 +53,15 @@ class Users {
         }
     }
 
-    public function update($name, $surname, $phone, $email) {
-        $stm = $this->sql->prepare('UPDATE users SET name = :name, surname = :surname, phone = :phone WHERE email = :email;');
+    public function update($name, $surname, $phone, $email, $card_number, $cvc, $card_date) {
+        $stm = $this->sql->prepare('UPDATE users SET name = :name, surname = :surname, phone = :phone, card_number = :card_number, cvc = :cvc, card_date = :card_date WHERE email = :email;');
         $stm->bindValue(':name', $name);
         $stm->bindValue(':surname', $surname);
         $stm->bindValue(':phone', $phone);
         $stm->bindValue(':email', $email);
+        $stm->bindValue(':card_number', $card_number);
+        $stm->bindValue(':cvc', $cvc);
+        $stm->bindValue(':card_date', $card_date);
 
         $stm->execute();
         if ($stm->errorCode() == 0) {
