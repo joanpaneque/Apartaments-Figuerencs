@@ -25,6 +25,7 @@
                     </div>
                 </button>
                 <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="?r=information">Perfil</a></li>
                     <li><a class="dropdown-item" href="?r=register">Gestor</a></li>
                     <li><a class="dropdown-item" href="?r=logout">Tancar sessió</a></li>
                 </ul>
