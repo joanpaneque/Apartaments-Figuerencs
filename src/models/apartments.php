@@ -64,6 +64,52 @@ class Apartments {
         ];
     }
 
+    public function getAllReservations($userid) {
+        $query = "SELECT * FROM bookings WHERE user_code = :userid";
+        $stmt = $this->sql->prepare($query);
+        $stmt->bindValue(":userid", $userid);
+        $stmt->execute();
+
+        $reservations = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $apartments = [];
+
+        foreach ($reservations as $reservation) {
+            $apartments[] = $this->get($reservation["apartment_code"]);
+        }
+
+        return [
+            "reservations" => $reservations,
+            "apartments" => $apartments
+        ];
+
+    }
+
+    public function getReservation($userid, $booking_code) {
+
+        $query = "SELECT * FROM bookings WHERE user_code = :userid AND code = :booking_code";
+        $stmt = $this->sql->prepare($query);
+        $stmt->bindValue(":userid", $userid);
+        $stmt->bindValue(":booking_code", $booking_code);
+        $stmt->execute();
+        $reservation = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        // If the reservation is not found, return false
+        if (empty($reservation)) return false;
+
+        return [
+            "reservation" => $reservation[0],
+            "apartment" => $this->get($reservation[0]["apartment_code"])
+        ];
+    }
+
+    public function cancelReservation($userid, $booking_code) {
+        $query = "UPDATE bookings SET cancelled = 1 WHERE user_code = :userid AND code = :booking_code";
+        $stmt = $this->sql->prepare($query);
+        $stmt->bindValue(":userid", $userid);
+        $stmt->bindValue(":booking_code", $booking_code);
+        $stmt->execute();
+    }
+
     public function isAvailable($id, $date1, $date2, $people) {
         if ($people == "undefined" || $people == 0) return false;
         $query = "

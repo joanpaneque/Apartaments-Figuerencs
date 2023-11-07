@@ -35,6 +35,7 @@
                     <?php if ($showAdminPanel) { ?>
                         <li><a class="dropdown-item" href="?r=register">Gestor</a></li>
                     <?php } ?>
+                    <li><a class="dropdown-item" href="?r=reservation">Reserves</a></li>
                     <li><a class="dropdown-item" href="?r=logout">Tancar sessió</a></li>
                 </ul>
             </div>

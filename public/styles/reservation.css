@@ -69,13 +69,13 @@ body {
 
 
 /* ########### TABLET */
-@media screen and (min-width: 480px) {
-
-}
+@media screen and (min-width: 480px) {}
 
 
 
 /* ########### PC */
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 960px) {}
 
+.dateMinified {
+    display: block;
 }

@@ -14,13 +14,13 @@
         if ($isAvailable) {
             $reservation = $container->apartments()->makeReservation($apartmentCode, $dateEntry, $dateExit, $container->userid);
             $response->set("reservation", $reservation);
+        } else {
+            $response->redirect("location: index.php");
         }
 
         $response->set("reservation", $reservation);
 
-
         $response->setTemplate("booking.php");
-
         return $response;
     }
     
