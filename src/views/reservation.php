@@ -31,9 +31,12 @@
                             <a href="?r=house"><?= $reservations["apartments"][$i]["title"] ?></a>
                             <p>Figueres</p>
                         </div>
-                        <a href="?r=bookingpdf&booking_id=<?=$reservations["reservations"][$i]["code"]?>">Descargar pdf</a>
-                        <a href="?r=bookingpdf&booking_id=<?=$reservations["reservations"][$i]["code"]?>">Cancelar reserva</a>
-
+                        <?php if ($reservations["reservations"][$i]["cancelled"] != "1") { ?>
+                            <a href="?r=bookingpdf&booking_id=<?=$reservations["reservations"][$i]["code"]?>">Descargar pdf</a>
+                            <a href="?r=cancel&booking_id=<?=$reservations["reservations"][$i]["code"]?>">Cancelar reserva</a>
+                        <?php } else { ?>
+                            <p style="color: #EE0000; font-weight: bold">Reserva cancelada</p>
+                        <?php } ?>
                         <p class="right-aligned-content">
                             <span class="dateMinified"><?= dateToCatalan($reservations["reservations"][$i]["date1"]) ?></span>
                             <span class="dateMinified"><?= dateToCatalan($reservations["reservations"][$i]["date2"]) ?></span>
