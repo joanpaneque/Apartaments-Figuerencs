@@ -26,6 +26,7 @@
     include "../src/controllers/booking.php";
     include "../src/controllers/bookingpdf.php";
     include "../src/controllers/cancel.php";
+    include "../src/controllers/cookies.php";
 
     // Models
     include "../src/models/connection.php";
@@ -78,6 +79,8 @@
         middleIsLogged($request, $response, $container, "ctrlBookingPDF");
     } else if ($r === "cancel") {
         middleIsLogged($request, $response, $container, "ctrlCancel");
+    } else if ($r === "cookies") {
+        ctrlAcceptCookies($request, $response, $container);
     } else {
         echo "404";
     }

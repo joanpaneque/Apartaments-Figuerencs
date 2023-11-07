@@ -1,0 +1,42 @@
+.cookies {
+    margin: 0;
+    padding: 0;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.542);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Asegura que l'overlay estigui per sobre de tot */
+}
+
+.quadrat {
+    height: 250px;
+    width: 600px;
+    border-radius: 15px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.cookies button {
+    margin-top: 10px;
+}
+
+
+/* MODAL */
+.image-cookie {
+    width: 25px;
+}
+
+.modal-body {
+    margin-top: 20px;
+}
