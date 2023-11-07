@@ -8,24 +8,28 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="assets/img/logo-transparent.png" type="image/x-icon">
+    <link rel="stylesheet" href="sytles/booking.css">
+
     <link rel="stylesheet" type="text/css" href="styles/global.css">
     <script src="js/index.js" type="module"></script>
     <title>Booking</title>
 </head>
 <body>
     <?php require 'header.php' ?>
-    <div class="container">
-        <?php if ($reservation) { ?>
-            <h1>Reserva feta</h1>
-            <p>Has realitzat la teva reserva correctament a l'apartament "<?= $reservation["apartment"]["title"] ?>"</p>
-            <p>El teu codi de reserva és: <?= $reservation["apartment"]["title"] ?></p>
-        <?php } else { ?>
-            <h1>Reserva no feta</h1>
-        <?php } ?>
+    <div class="d-flex align-items-center" style="height: 80vh;">
+        <div class="container text-center">
+            <?php if ($reservation) { ?>
+                <h1>Reserva feta</h1>
+                <p>Has realitzat la teva reserva correctament a l'apartament <b>"<?= $reservation["apartment"]["title"] ?>"</b></p>
+                <p>El teu codi de reserva és: <b><?= $reservation["apartment"]["title"] ?></b></p>
+            <?php } else { ?>
+                <h1>Reserva no feta</h1>
+            <?php } ?>
 
-        <a href="?r=bookingpdf&booking_id=<?=$reservation["reservation"]["code"]?>"><button>Obtenir PDF de la reserva</button></a>
-        <a href="?r=reservation"><button>Veure les meves reserves</button></a>
-        <a href="?r="><button>Tornar</button></a>
+            <a href="?r=bookingpdf&booking_id=<?=$reservation["reservation"]["code"]?>"><button class="buttons">Obtenir PDF de la reserva</button></a>
+            <a href="?r=reservation"><button class="buttons">Veure les meves reserves</button></a>
+            <a href="?r="><button class="buttons">Tornar</button></a>
+        </div>
     </div>
 </body>
 </html>
