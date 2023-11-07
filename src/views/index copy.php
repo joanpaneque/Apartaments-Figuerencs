@@ -13,39 +13,32 @@
         <link rel="stylesheet" type="text/css" href="styles/calendar.css">
         <link rel="stylesheet" type="text/css" href="styles/global.css">
         <link rel="stylesheet" type="text/css" href="styles/FloatingWindow.css">
-        <link rel="stylesheet" type="text/css" href="styles/cookies.css">
         <script src="js/index.js" type="module"></script>
         <title>Index</title>
     </head>
-
     <body>
-
         <?php require 'header.php' ?>
 
-        <?php if (!$cookiesAccepted) { ?>
-            <!-- MODAL COOKIES -->
-            <div class="cookies" id="cookieModal">
-                <div class="modal-dialog overlay">
-                    <div class="modal-content quadrat" id="quadrat">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Cookies</h5>
-                            <img src="../assets/img/cookies.png" class="image-cookie" alt="Cookie">
-                        </div>
+        <!-- MODAL COOKIES -->
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
 
-                        <div class="modal-body">
-                            <div class="cookie">
-                                <p>Utilitzem cookies pròpies i de tercers per millorar els nostres serveis i mostrar publicitat relacionada amb les seves preferències mitjançant l'anàlisi dels seus hàbits de navegació. Si continua navegant, considerem que accepta el seu ús.</p>
-                            </div>
-                        </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
 
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Tancar</button>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
-        <?php } ?>
-
+        </div>
         
         <div class="container">
             <nav class="row booking-inputs">
@@ -91,7 +84,7 @@
 
 
 
-        <script src="/js/cookies.js"></script>
+        <script src="cookies.js"></script>
     </body>
 
 </html>
