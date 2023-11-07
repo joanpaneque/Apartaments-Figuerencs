@@ -65,7 +65,7 @@ class Apartments {
     }
 
     public function getAllReservations($userid) {
-        $query = "SELECT * FROM bookings WHERE user_code = :userid";
+        $query = "SELECT * FROM bookings WHERE user_code = :userid ORDER BY date1 DESC, date2 DESC, booking_date DESC, cancelled ASC, code DESC";
         $stmt = $this->sql->prepare($query);
         $stmt->bindValue(":userid", $userid);
         $stmt->execute();
