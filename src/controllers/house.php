@@ -17,7 +17,6 @@
 
         if ($isAvailable) {
             $apartment = $container->apartments()->get($id);
-
             $response->set("apartmentCode", $id);
             $response->set("dateEntry", $dateEntry);
             $response->set("dateExit", $dateExit);

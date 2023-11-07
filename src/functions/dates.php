@@ -21,3 +21,25 @@ function isDDMMYYYYDate($date) {
     }
     return true;
 }
+
+
+function dateToCatalan($date) {
+    $mesosCatala = [
+        1 => "Gen",
+        2 => "Feb",
+        3 => "Març",
+        4 => "Abr",
+        5 => "Maig",
+        6 => "Juny",
+        7 => "Jul",
+        8 => "Ag",
+        9 => "Set",
+        10 => "Oct",
+        11 => "Nov",
+        12 => "Des"
+    ];
+
+    $day = date('j', strtotime($date));
+    $month = $mesosCatala[date('n', strtotime($date))];
+    return $day . " " . $month;
+}

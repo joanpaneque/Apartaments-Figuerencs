@@ -1,4 +1,8 @@
 <?php
+
+    // Vendor
+    include "../vendor/autoload.php";
+
     // Configuration
     include "../src/config.php";
 
@@ -20,6 +24,7 @@
     include "../src/controllers/logout.php";
     include "../src/controllers/updateUser.php";
     include "../src/controllers/booking.php";
+    include "../src/controllers/bookingpdf.php";
 
     // Models
     include "../src/models/connection.php";
@@ -49,27 +54,29 @@
     if ($r == "") {
         middleIsLogged($request, $response, $container, "ctrlIndex");
     } else if ($r == "apartments") {
-        ctrlApartments($request, $response, $container);
+        middleIsLogged($request, $response, $container, "ctrlApartments");
     } else if ($r === "login") {
         ctrlLogin($request, $response, $container);
     } elseif ($r === "register") {
         ctrlRegister($request, $response, $container);
     } elseif ($r === "information") {
-        ctrlPersonalInformation($request, $response, $container);
+        middleIsLogged($request, $response, $container, "ctrlPersonalInformation");
     } elseif ($r === "reservation") {
-        ctrlReservation($request, $response, $container);
+        middleIsLogged($request, $response, $container, "ctrlReservation");
     } elseif ($r === "house") {
-        ctrlHouse($request, $response, $container);
+        middleIsLogged($request, $response, $container, "ctrlHouse");
     } elseif ($r === "tpv") {
-        ctrlTpv($request, $response, $container);
+        middleIsLogged($request, $response, $container, "ctrlTpv");
     } else if ($r === "logout") {
-        ctrlLogout($request, $response, $container);
+        middleIsLogged($request, $response, $container, "ctrlLogout");
     } else if ($r === "updateUser") {
-        ctrlUpdateUser($request, $response, $container);
+        middleIsLogged($request, $response, $container, "ctrlUpdateUser");
     } else if ($r === "booking") {
-        ctrlBooking($request, $response, $container);
+        middleIsLogged($request, $response, $container, "ctrlBooking");
+    } else if ($r === "bookingpdf") {
+        middleIsLogged($request, $response, $container, "ctrlBookingPDF");
     } else {
         echo "404";
-    } 
+    }
 
     $response->response();
