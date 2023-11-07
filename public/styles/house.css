@@ -126,6 +126,10 @@ h6 {
     color: #767676;
 }
 
+.right-aligned-content span {
+    display: block;
+}
+
 
 /* ######### DATES AND HOSTS */
 .dates-hosts {

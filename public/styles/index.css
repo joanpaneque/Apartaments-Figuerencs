@@ -10,10 +10,6 @@ nav {
 
 
 /* General CSS */
-.body-align {
-    /* padding: 10px; */
-}
-
 .icon {
     max-height: 25px;
     max-width: 25px;
@@ -211,7 +207,7 @@ label {
 
 @media screen and (min-width: 391px) and (max-width: 767px) {
     .apartment-image img {
-        height: 300px;
+        height: 100%;
         object-fit: cover;
     }
 }

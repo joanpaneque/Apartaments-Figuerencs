@@ -229,7 +229,7 @@ function updateApartments(entries) {
 
                 var carouselApartment = $("<div class='carousel-item'></div>");
                 carouselApartment.html(`
-                    <img src="${apartment.images[0]}" class="d-block w-100">                
+                    <img src="${apartment.images[0]}" class="d-block w-100" alt="Imatge del apartament '${apartment.title}'">                
                 `);
 
                 carouselApartment.click(() => {
@@ -258,7 +258,8 @@ function updateApartments(entries) {
                                             <div class="apartment-line">
                                                 <div class="apartment-rooms">${apartment.rooms} habitacions</div>
                                             </div>
-                                            <div class="apartment-price">€ ${apartment.price_peak_season}</div>
+                                            <div class="apartment-price">${apartment.price_peak_season}€</div>
+                                            <div class="apartment-meters">${apartment.square_meters} m²</div>
                                         </div>
                                     </div>
 
