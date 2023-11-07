@@ -200,6 +200,7 @@ function updateApartments(entries) {
             console.log(data);
             const apartments = JSON.parse(data);
             $("#apartments").empty();
+            $("#carousel-index").empty();
             apartments.apartments.forEach(apartment => {
                 const apartmentElement = $(`
                     <article class="apartment">
@@ -209,7 +210,6 @@ function updateApartments(entries) {
                         <div class="apartment-info">
                             <div class="apartment-line">
                                 <div class="apartment-description">${apartment.title}</div>
-                                <div class="apartment-stars"><img src="assets/svg/star.svg" alt="Icona d'estrella">5,0</div>
                             </div>
                             <div class="apartment-line">
                                 <div class="apartment-rooms">${apartment.rooms} habitacions</div>
@@ -226,7 +226,68 @@ function updateApartments(entries) {
                 // Test
 
                 $("#apartments").append(apartmentElement);
+
+                var carouselApartment = $("<div class='carousel-item'></div>");
+                carouselApartment.html(`
+                    <img src="${apartment.images[0]}" class="d-block w-100">                
+                `);
+
+                carouselApartment.click(() => {
+                    const modalApartment = $ (`
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Reserva</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    
+
+
+                                    <div class="modal-body">
+
+                                        <div class="apartment-image">
+                                            <img class="" src="${apartment.images[0]}" alt="Imatge del apartament '${apartment.title}'">
+                                        </div>
+
+                                        <div class="apartment-info">
+                                            <div class="apartment-title">
+                                                <h3>${apartment.title}</h3>
+                                            </div>
+
+                                            <div class="apartment-line">
+                                                <div class="apartment-rooms">${apartment.rooms} habitacions</div>
+                                            </div>
+                                            <div class="apartment-price">€ ${apartment.price_peak_season}</div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="modal-footer">
+                                        <a href="?r=house&id=${apartment.code}&date-entry=${entries["date-entry"]}&date-exit=${entries["date-exit"]}&people=${entries["people"]}">
+                                        <button type="button" class="btn btn-primary">Completar reserva</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+
+                    // Afegir modalApartment al cos del document
+                    modalApartment.appendTo("body");
+
+                    // Mostra el modal
+                    modalApartment.modal("show");
+                });
+
+                $("#carousel-index").append(carouselApartment);
+                
             });
+
+            $("#carousel-index div:first-child").addClass("active");
+
+
+
         }
     });
 }
