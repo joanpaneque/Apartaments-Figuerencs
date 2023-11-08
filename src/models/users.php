@@ -38,6 +38,23 @@ class Users {
         return $permissions;
     }
 
+    public function getAll($userid) {
+        // Check if user role name is admin
+        $user = $this->getData($userid);
+        $stm = $this->sql->prepare('SELECT * FROM roles WHERE code = :code');
+        $stm->bindValue(':code', $user['role_code']);
+        $stm->execute();
+        $role = $stm->fetch(\PDO::FETCH_ASSOC);
+        if ($role['name'] == 'admin') {
+            $stm = $this->sql->prepare('SELECT * FROM users');
+            $stm->execute();
+            $users = $stm->fetchAll(\PDO::FETCH_ASSOC);
+            return $users;
+        } else {
+            return ["error" => "No tens permisos per veure aquesta pàgina"];
+        }
+    }
+
     public function register($name, $surname, $email, $phone, $password) {
         $stm = $this->sql->prepare('INSERT INTO users (name, surname, email, phone, password, code, role_code) VALUES (:name, :surname, :email, :phone, :password, NULL, 1)');
         $stm->bindValue(':name', $name);
@@ -69,10 +86,7 @@ class Users {
         } else {
             return false;
         }
-    }
-
-    
-
+    } 
 
     public function exists($email) {
         $stm = $this->sql->prepare('SELECT * FROM users WHERE email = :email');

@@ -27,13 +27,16 @@
                             if ($permission["name"] === "management_panel") {
                                 $showAdminPanel = true;
                             }
+                            if ($permission["name"] === "admin") {
+                                $showAdminPanel = true;
+                            }
                         }
                     }
                 ?>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="?r=information">Perfil</a></li>
                     <?php if ($showAdminPanel) { ?>
-                        <li><a class="dropdown-item" href="?r=register">Gestor</a></li>
+                        <li><a class="dropdown-item" href="?r=manager">Gestor</a></li>
                     <?php } ?>
                     <li><a class="dropdown-item" href="?r=reservation">Reserves</a></li>
                     <li><a class="dropdown-item" href="?r=logout">Tancar sessió</a></li>
