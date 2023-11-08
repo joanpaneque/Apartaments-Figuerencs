@@ -162,18 +162,12 @@ class Apartments {
             LEFT JOIN images i ON a.code = i.apartment_code
             WHERE a.capacity >= :people
             AND a.code NOT IN (
-                SELECT DISTINCT b1.apartment_code
+                SELECT b1.apartment_code
                 FROM bookings AS b1
                 WHERE (
                     (:date1 BETWEEN b1.date1 AND b1.date2)
                     OR (:date2 BETWEEN b1.date1 AND b1.date2)
                     OR (b1.date1 BETWEEN :date1 AND :date2)
-                )
-                AND NOT EXISTS (
-                    SELECT 1
-                    FROM bookings AS b2
-                    WHERE b2.apartment_code = b1.apartment_code
-                    AND b2.cancelled IS NULL  -- Reserva no cancelada
                 )
             )           
         ";
