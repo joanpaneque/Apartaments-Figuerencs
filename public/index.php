@@ -27,6 +27,8 @@
     include "../src/controllers/bookingpdf.php";
     include "../src/controllers/cancel.php";
     include "../src/controllers/cookies.php";
+    include "../src/controllers/manager.php";
+    include "../src/controllers/users.php";
 
     // Models
     include "../src/models/connection.php";
@@ -81,8 +83,12 @@
         middleIsLogged($request, $response, $container, "ctrlCancel");
     } else if ($r === "cookies") {
         ctrlAcceptCookies($request, $response, $container);
+    } else if ($r === "manager") {
+        middleIsLogged($request, $response, $container, "ctrlManager");
+    } else if ($r === "users") {    
+        middleIsLogged($request, $response, $container, "ctrlUsers");
     } else {
-        echo "404";
+
     }
 
     $response->response();

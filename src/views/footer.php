@@ -16,12 +16,15 @@
                             if ($permission["name"] === "management_panel") {
                                 $showAdminPanel = true;
                             }
+                            if ($permission["name"] === "admin") {
+                                $showAdminPanel = true;
+                            }
                         }
                     }
                 ?>
                 <li><a class="nav-link px-2 text-body-secondary" href="?r=information">Perfil</a></li>
                 <?php if ($showAdminPanel) { ?>
-                    <li><a class="nav-link px-2 text-body-secondary" href="?r=register">Gestor</a></li>
+                    <li><a class="nav-link px-2 text-body-secondary" href="?r=manager">Gestor</a></li>
                 <?php } ?>
                 <li><a class="nav-link px-2 text-body-secondary" href="?r=logout">Tancar sessió</a></li>
             </ul>

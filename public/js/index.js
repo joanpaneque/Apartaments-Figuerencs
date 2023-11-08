@@ -159,12 +159,10 @@ dateForm.on("change", e => {
         entries[element.name] = element.value;
     });
 
-    console.log(entries);
 
     entries["date-entry"] = DDMMYYYYToYYYYMMDD(entries["date-entry"]);
     entries["date-exit"] = DDMMYYYYToYYYYMMDD(entries["date-exit"]);
 
-    console.log(entries);
     updateApartments(entries);
 });
 
@@ -197,6 +195,7 @@ function updateApartments(entries) {
                 console.error(data.error);
                 return;
             }
+
             console.log(data);
             const apartments = JSON.parse(data);
             $("#apartments").empty();
@@ -233,7 +232,7 @@ function updateApartments(entries) {
                 `);
 
                 carouselApartment.click(() => {
-                    const modalApartment = $ (`
+                    const modalApartment = $(`
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -282,7 +281,7 @@ function updateApartments(entries) {
                 });
 
                 $("#carousel-index").append(carouselApartment);
-                
+
             });
 
             $("#carousel-index div:first-child").addClass("active");
