@@ -197,17 +197,41 @@ label {
     margin-bottom: 50px;
 }
 
+.hr {
+    display: none;
+}
+
+
 
 @media screen and (max-width: 992px) {
-    .carousel-item img {
-        height: 100%;
-        object-fit: none;
+    .carousel {
+        width: 100%;
+        height: 400px;
+        margin-bottom: 100px;
+        
     }
+
+    .carousel-inner {
+        height: 100%;
+        object-fit: fill;
+    }
+
+    .carousel-inner img {
+        height: 100%;
+        transform: scale(2.5);
+    }
+    
 }
 
 @media screen and (min-width: 391px) and (max-width: 767px) {
     .apartment-image img {
         height: 100%;
         object-fit: cover;
+    }
+
+    .hr {
+        display: block;
+        margin-top: -75px;
+        margin-bottom: 20px;
     }
 }

@@ -229,7 +229,7 @@ function updateApartments(entries) {
 
                 var carouselApartment = $("<div class='carousel-item'></div>");
                 carouselApartment.html(`
-                    <img src="${apartment.images[0]}" class="d-block w-100" alt="Imatge del apartament '${apartment.title}'">                
+                    <img src="${apartment.images[0]}" class="d-block w-100 img-enlargable" alt="Imatge del apartament '${apartment.title}'">                
                 `);
 
                 carouselApartment.click(() => {
