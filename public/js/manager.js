@@ -95,4 +95,33 @@ function update() {
             });
         }
     })
+
+
+    $("#manager-apartments").empty();
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "?r=managerApartments",
+        data: {},
+        success: data => {
+            console.log(data);
+            data.forEach(apartment => {
+                $("#manager-apartments").append(`
+
+                <div class="card" style="width: 18rem;">
+                    <img src="${apartment.images[0]}" class="card-img-top apartment-image" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${apartment.title}</h5>
+                        <p class="card-text">${apartment.short_description}</p>
+                        <a href="#" class="btn btn-primary">Editar</a>
+                        <a href="?r=deleteApartment&apartment_code=${apartment.code}" class="btn btn-primary">Eliminar</a>
+                    </div>
+                </div>
+                `);
+            });
+        },
+        error: error => {
+            console.log(error.responseText);
+        }
+    });
 }

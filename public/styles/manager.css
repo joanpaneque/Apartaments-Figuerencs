@@ -42,3 +42,16 @@ section {
     padding: 15px;
 
 }
+
+#manager-apartments {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    justify-items: center;
+}
+
+.apartment-image {
+    height: 150px;
+    object-fit: cover;
+}
