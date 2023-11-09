@@ -28,6 +28,9 @@
     include "../src/controllers/cookies.php";
     include "../src/controllers/manager.php";
     include "../src/controllers/users.php";
+    include "../src/controllers/managerApartments.php";
+    include "../src/controllers/createApartment.php";
+    include "../src/controllers/deleteApartment.php";
 
     // Models
     include "../src/models/connection.php";
@@ -56,7 +59,7 @@
 
     if ($r == "") {
         middleIsLogged($request, $response, $container, "ctrlIndex");
-    } else if ($r == "apartments") {
+    } else if ($r === "apartments") {
         middleIsLogged($request, $response, $container, "ctrlApartments");
     } else if ($r === "login") {
         ctrlLogin($request, $response, $container);
@@ -84,8 +87,14 @@
         middleIsLogged($request, $response, $container, "ctrlManager");
     } else if ($r === "users") {    
         middleIsLogged($request, $response, $container, "ctrlUsers");
+    } else if ($r === "managerApartments") {
+        middleIsLogged($request, $response, $container, "ctrlManagerApartments");
+    } else if ($r === "createApartment") {
+        middleIsLogged($request, $response, $container, "ctrlCreateApartment");
+    } else if ($r = "deleteApartment") {
+        middleIsLogged($request, $response, $container, "ctrlDeleteApartment");
     } else {
-
+        echo "404";
     }
 
     $response->response();

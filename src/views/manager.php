@@ -12,7 +12,6 @@
     <link rel="stylesheet" type="text/css" href="styles/manager.css">
 
     <script src="js/manager.js" type="module"></script>
-    <script src="js/index.js" type="module"></script>
     <title>Booking</title>
 </head>
 <body>
@@ -26,7 +25,7 @@
                 <div section="bookings">Reserves</div>
             </aside>
             <section sectionid="apartments">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addApartment">Crear apartament</button>
+                <a href="?r=createApartment"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addApartment">Crear apartament</button></a>
                 <div id="manager-apartments">
                     
                 </div>
