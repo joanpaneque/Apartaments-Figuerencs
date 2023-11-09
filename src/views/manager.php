@@ -97,5 +97,7 @@
     </div>
     <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <?php require 'footer.php' ?>
+
 </body>
 </html>

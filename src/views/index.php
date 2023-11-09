@@ -83,9 +83,6 @@
                 </button>
             </div>
 
-            <hr class="hr hr-blurry">
-
-
             <div id="apartments" class="apartments row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 g-lg-4">
             </div>
         </div>

@@ -29,5 +29,8 @@
             <a href="?r="><button type="button" class="btn btn-secondary">Tornar</button></a>
         </div>
     </div>
+    
+    <?php require 'footer.php' ?>
+
 </body>
 </html>
