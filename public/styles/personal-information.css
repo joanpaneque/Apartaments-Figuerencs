@@ -49,3 +49,10 @@
     left: 50%;
     transform: translate(70%);
 }
+
+
+@media screen and (max-width: 470px) {
+    .info {
+        width: 300px;
+    }
+}
