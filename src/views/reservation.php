@@ -19,8 +19,7 @@
         
         <div class="container">
             <h1>Reserves</h1>
-            <h5>2023</h5>
-            <?php for ($i = 0; $i < 5; $i++) { ?>
+            <?php for ($i = 0; $i < count($reservations["reservations"]); $i++) { ?>
                 <div class="group">
                     <div class="img">
                         <a href="?r=house">
@@ -29,36 +28,22 @@
                     </div>
                     <div class="info-container">
                         <div class="text-container">
-                            <a href="?r=house">El Far</a>
+                            <a href="?r=house"><?= $reservations["apartments"][$i]["title"] ?></a>
                             <p>Figueres</p>
                         </div>
+                        <?php if ($reservations["reservations"][$i]["cancelled"] != "1") { ?>
+                            <a href="?r=bookingpdf&booking_id=<?=$reservations["reservations"][$i]["code"]?>">Descargar pdf</a>
+                            <a href="?r=cancel&booking_id=<?=$reservations["reservations"][$i]["code"]?>">Cancelar reserva</a>
+                        <?php } else { ?>
+                            <p style="color: #EE0000; font-weight: bold">Reserva cancelada</p>
+                        <?php } ?>
                         <p class="right-aligned-content">
-                            18 Oct
-                            20 Oct
+                            <span class="dateMinified"><?= dateToCatalan($reservations["reservations"][$i]["date1"]) ?></span>
+                            <span class="dateMinified"><?= dateToCatalan($reservations["reservations"][$i]["date2"]) ?></span>
                         </p>
                     </div>
                 </div>
             <?php } ?>
-
-            <h5>2022</h5>
-            <?php for ($i = 0; $i < 5; $i++) { ?>
-                <div class="group">
-                    <div class="img">
-                        <img src="../assets/img/interior.jpg" alt="Interior">
-                    </div>
-                    <div class="info-container">
-                        <div class="text-container">
-                            <a href="">La Maravella</a>
-                            <p>Figueres</p>
-                        </div>
-                        <p class="right-aligned-content">
-                            18 Oct
-                            20 Oct
-                        </p>
-                    </div>
-                </div>
-            <?php } ?>
-
 
         </div>
     </body>

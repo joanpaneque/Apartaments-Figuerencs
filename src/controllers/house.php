@@ -17,7 +17,7 @@
 
         if ($isAvailable) {
             $apartment = $container->apartments()->get($id);
-
+            $response->set("apartmentCode", $id);
             $response->set("dateEntry", $dateEntry);
             $response->set("dateExit", $dateExit);
             $response->set("people", $people);
@@ -32,11 +32,8 @@
             $response->set("entryTime", $apartment["entry_time"]);
             $response->set("images", $apartment["images"]);
 
-            $services = explode(",", $apartment["services"]);
+            $services = explode(",", (string)$apartment["services"]);
             $response->set("services", $services ?? "");
-
-
-            
 
             $response->setTemplate("house.php");
         } else {

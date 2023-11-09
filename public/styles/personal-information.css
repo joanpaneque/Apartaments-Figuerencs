@@ -1,14 +1,13 @@
 .center {
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
 }
 
 
 /* ########### USER CONTAINER */
 .user {
-    font-size: 35px;
+    font-size: 30px;
 }
 
 
@@ -22,12 +21,12 @@
 /* ######### INFORMATION */
 .title {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .info {
     width: 450px;
-    height: 35px;
+    height: 30px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 

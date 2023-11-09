@@ -20,16 +20,22 @@ namespace Emeset;
 class Container {
     public $config = [];
     public $sql;
+    public $userid;
 
     /**
      * __construct:  Crear contenidor
      *
      * @param $config array paràmetres de configuració de l'aplicació.
      **/
-    public function __construct($config) {
+    public function __construct($config, $userid = null) {
         $this->config = $config;
         $conn = new \Daw\Connection($config);
         $this->sql = $conn->getConnection();
+        $this->userid = $userid;
+    }
+
+    public function setUserId($userid) {
+        $this->userid = $userid;
     }
 
     public function response() {

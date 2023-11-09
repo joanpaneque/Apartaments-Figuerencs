@@ -71,35 +71,39 @@
                                     </div>
                                 </ul>
                                 <p class="right-aligned-content">
-                                    <?php
-                                        $mesosCatala = [
-                                            1 => "Gen",
-                                            2 => "Feb",
-                                            3 => "Març",
-                                            4 => "Abr",
-                                            5 => "Maig",
-                                            6 => "Juny",
-                                            7 => "Jul",
-                                            8 => "Ag",
-                                            9 => "Set",
-                                            10 => "Oct",
-                                            11 => "Nov",
-                                            12 => "Des"
-                                        ];
+                                    <span>
+                                        <?php
+                                            $mesosCatala = [
+                                                1 => "Gen",
+                                                2 => "Feb",
+                                                3 => "Març",
+                                                4 => "Abr",
+                                                5 => "Maig",
+                                                6 => "Juny",
+                                                7 => "Jul",
+                                                8 => "Ag",
+                                                9 => "Set",
+                                                10 => "Oct",
+                                                11 => "Nov",
+                                                12 => "Des"
+                                            ];
 
 
-                                        $dia = date('j', strtotime($dateEntry));
-                                        $mes = $mesosCatala[date('n', strtotime($dateEntry))];
+                                            $dia = date('j', strtotime($dateEntry));
+                                            $mes = $mesosCatala[date('n', strtotime($dateEntry))];
 
-                                        echo $dia . " " . $mes;
-                                    ?>
-                                    <br>
-                                    <?php
-                                        $dia = date('j', strtotime($dateExit));
-                                        $mes = $mesosCatala[date('n', strtotime($dateExit))];
+                                            echo $dia . " " . $mes;
+                                        ?>
+                                    </span>
+                                    
+                                    <span>
+                                        <?php
+                                            $dia = date('j', strtotime($dateExit));
+                                            $mes = $mesosCatala[date('n', strtotime($dateExit))];
 
-                                        echo $dia . " " . $mes;
-                                    ?>
+                                            echo $dia . " " . $mes;
+                                        ?>
+                                    </span>
                                 </p>
 
                             </div>
@@ -168,11 +172,10 @@
                                     ?>€
                                 </p>
                             </div>
-
                         </div>
-                    
+    
                         <div class="container-button">
-                            <a href="?r=tpv">
+                            <a href="?r=booking&date-entry=<?=$dateEntry?>&date-exit=<?=$dateExit?>&people=<?=$people?>&apartment-code=<?=$apartmentCode?>">
                                 <button type="button" class="btn btn-primary">Reserva</button>
                             </a>
                         </div>
