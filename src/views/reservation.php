@@ -13,9 +13,8 @@
 
     <body>
 
-        <?php 
-            include("header.php");
-        ?>
+        <?php require 'header.php' ?>
+
         
         <div class="container">
             <h1>Reserves</h1>
@@ -46,6 +45,9 @@
             <?php } ?>
 
         </div>
+
+        <?php require 'footer.php' ?>
+
     </body>
 
 </html>

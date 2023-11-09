@@ -17,5 +17,8 @@
     <div class="container">
 
     </div>
+
+    <?php require 'footer.php' ?>
+
 </body>
 </html>

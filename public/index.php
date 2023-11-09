@@ -20,7 +20,6 @@
     include "../src/controllers/index.php";
     include "../src/controllers/apartments.php";
     include "../src/controllers/house.php";
-    include "../src/controllers/tpv.php";
     include "../src/controllers/logout.php";
     include "../src/controllers/updateUser.php";
     include "../src/controllers/booking.php";
@@ -59,16 +58,14 @@
         middleIsLogged($request, $response, $container, "ctrlApartments");
     } else if ($r === "login") {
         ctrlLogin($request, $response, $container);
-    } elseif ($r === "register") {
+    } else if ($r === "register") {
         ctrlRegister($request, $response, $container);
-    } elseif ($r === "information") {
+    } else if ($r === "information") {
         middleIsLogged($request, $response, $container, "ctrlPersonalInformation");
-    } elseif ($r === "reservation") {
+    } else if ($r === "reservation") {
         middleIsLogged($request, $response, $container, "ctrlReservation");
-    } elseif ($r === "house") {
+    } else if ($r === "house") {
         middleIsLogged($request, $response, $container, "ctrlHouse");
-    } elseif ($r === "tpv") {
-        middleIsLogged($request, $response, $container, "ctrlTpv");
     } else if ($r === "logout") {
         middleIsLogged($request, $response, $container, "ctrlLogout");
     } else if ($r === "updateUser") {
