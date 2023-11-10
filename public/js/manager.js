@@ -107,7 +107,6 @@ function update() {
             console.log(data);
             data.forEach(apartment => {
                 $("#manager-apartments").append(`
-
                 <div class="card" style="width: 18rem;">
                     <img src="${apartment.images[0]}" class="card-img-top apartment-image" alt="...">
                     <div class="card-body">

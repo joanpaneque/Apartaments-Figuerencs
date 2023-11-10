@@ -228,12 +228,6 @@ class Apartments {
     }
     
     public function getAll($date1, $date2, $people) {
-
-
-        // print_r([$date1, $date2, $people]);
-
-        // die();
-
         $query = "
             SELECT a.*, i.url
             FROM apartments a

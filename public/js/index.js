@@ -195,8 +195,6 @@ function updateApartments(entries) {
                 console.error(data.error);
                 return;
             }
-
-            console.log(data);
             const apartments = JSON.parse(data);
             $("#apartments").empty();
             $("#carousel-index").empty();

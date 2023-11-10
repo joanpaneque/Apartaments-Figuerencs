@@ -7,11 +7,11 @@
         $errorMessage = "";
 
         if (!isset($email) && !isset($password)) {
-            $errorMessage = "OK";
+            $errorMessage = "";
         } else if (isset($email) && !isset($password)) {
-            $errorMessage = "La contrasenya no pot estar buida";
+            $errorMessage = "";
         } else if (!isset($email) && isset($password)) {
-            $errorMessage = "El email no pot estar buit";
+            $errorMessage = "";
         } else {
             $userid = $container->user()->login($email, $password);
             

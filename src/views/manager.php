@@ -19,18 +19,18 @@
     <div class="container">
         <h1>Gestor</h1>
         <div class="manager-container">
-            <aside>
+            <aside class="g-col-6">
                 <div section="apartments">Apartaments</div>
                 <div section="users">Usuaris</div>
                 <div section="bookings">Reserves</div>
             </aside>
-            <section sectionid="apartments">
+            <section sectionid="apartments" class="g-col-6">
                 <a href="?r=createApartment"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addApartment">Crear apartament</button></a>
                 <div id="manager-apartments">
                     
                 </div>
             </section>
-            <section sectionid="users">
+            <section sectionid="users" class="g-col-6">
                 <div class="header"> <!-- Could not use <header> because of bootstrap annoying default styles -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUser">Crear usuari</button>
                     <div id="manager-users">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </section>
-            <section sectionid="bookings">
+            <section sectionid="bookings" class="g-col-6">
                 Reserves
             </section>
         </div>
