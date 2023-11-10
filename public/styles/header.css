@@ -1,0 +1,42 @@
+header {
+    height: 65px;
+    padding: 0 40px !important;
+}
+
+
+/* ########## LOGOS */
+.main-logo {
+    height: 45px;
+}
+
+.user-logo {
+    height: 40px;
+    padding: 10px 17px;
+    border-radius: 100px;
+    border: 1px solid #bbb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.user-logo img {
+    height: 100%;
+}
+
+.user-logo img:first-child {
+    height: 100%;
+    opacity: 0.33;
+}
+
+
+/* ########## DROPDOWN */
+
+.dropdown button {
+    border: 0;
+    background-color: initial;
+}
+
+.dropdown-menu {
+    min-width: 100px !important;
+}

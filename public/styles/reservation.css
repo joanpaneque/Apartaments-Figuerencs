@@ -1,0 +1,80 @@
+* {
+    outline: red 0px dashed;
+}
+
+body {
+    max-height: fit-content;
+    padding: 15px;
+}
+
+
+/* ######### MAIN CONTAINER */
+
+
+.container h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.195);
+    margin-bottom: 10px;
+    background-color: #eee;
+    padding: 10px 20px;
+}
+
+.img {
+    flex: 1;
+}
+
+.img img {
+    width: 85px;
+    height: 85px;
+    border-radius: 15px;
+}
+
+.info-container {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-container a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.info-container p {
+    margin-bottom: -2px;
+}
+
+.right-aligned-content {
+    text-align: right;
+    color: #6c6c6c;
+    width: 60px;
+}
+
+
+
+/* ########### TABLET */
+@media screen and (min-width: 480px) {}
+
+
+
+/* ########### PC */
+@media screen and (min-width: 960px) {}
+
+.dateMinified {
+    display: block;
+}
